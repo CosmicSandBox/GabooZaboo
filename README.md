@@ -1,4 +1,4 @@
-##Setup
+## Setup
 
 ```bash
 npm run dev
@@ -10,7 +10,7 @@ pnpm dev
 bun dev
 ```
 
-##[Git] Commit Message Convention
+## [Git] Commit Message Convention
 - Feat: 새로운 기능을 추가
 
 - Fix: 버그 수정
