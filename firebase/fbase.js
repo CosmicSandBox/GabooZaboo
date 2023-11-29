@@ -8,6 +8,8 @@ import {
 } from "firebase/firestore";
 import { db } from "./index";
 
+
+// 읽기
 export const getCollectionAll = async (collectionName) => {
   let data = [];
   const querySnapshot = await getDocs(collection(db, collectionName));
