@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-// import TestFbase from "./testFbase";
+import TestFbase from "./testFbase";
+import ResultTest from "./resultTest";
 
 function HomePage() {
   return (
@@ -9,7 +10,8 @@ function HomePage() {
       <Link href={"/introduce"}>
         <button>소개 페이지 이동</button>
       </Link>
-      {/*<TestFbase />*/}
+      <TestFbase />
+        <ResultTest/>
     </>
   );
 }
