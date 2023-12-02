@@ -13,6 +13,6 @@ function SecondResult () {
         </Link>
     </>
     );
-  }
+}
 
-  export default SecondResult;
+export default SecondResult;

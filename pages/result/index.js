@@ -3,6 +3,7 @@ import Index from "./firstResult";
 import Link from "next/link";
 import FirstResult from "./firstResult";
 
+import File from "../img/file.png";
 function Result () {
     return (
     <>

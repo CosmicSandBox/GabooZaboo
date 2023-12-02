@@ -24,7 +24,7 @@ function TestEI () {
                                 <button
                                     type={'button'}
                                     className={'BtnSize'}
-                                    onClick={handleBtn}
+                                    // onClick={handleBtn}
                                     ><FaCheck/></button>
                                 <p>질문입니다.</p>
                             </Btn>
@@ -140,9 +140,7 @@ const Question=styled.div`
       z-index: 1;
       right: 0;
       top: 0;
-      
       color:red;
-    ;
     }
   .Question-image{
     z-index: 0;
@@ -160,12 +158,17 @@ const Btn=styled.div`
 
   display: flex;
   flex-direction: row;
+  text-align: center;
+  align-items: center;
   padding: 1rem;
   margin: 0.5rem;
 
   border-radius: 1.25rem;
   background: #FFF;
-
+  
+  p{
+    margin: auto 1rem;
+  }
   .BtnSize{
     width: 2.625rem;
     height: 2.625rem;
