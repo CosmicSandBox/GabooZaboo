@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import styled from '@emotion/styled';
+import Image from "next/image";
+import GBJB from "../img/GBJB.png";
 
 
 function HomePage() {
@@ -8,7 +10,7 @@ function HomePage() {
   return (
     <>
         <Container>
-            <h1>홈페이지</h1>
+            <Image src={GBJB} className={"Header"}/>
             <div
                 className={'InputDiv'}
             >
@@ -34,6 +36,11 @@ const Container=styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  .Header{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
   .InputDiv{
     background-color: green;
     padding: 0.5rem;
