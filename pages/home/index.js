@@ -1,35 +1,16 @@
 import React, {useState} from "react";
 import Link from "next/link";
+
 import styled from '@emotion/styled';
 import Image from "next/image";
-import axios from "axios";
+
 
 import GBJB from "../img/GBJB.png";
-import HomeImg from "../img/home.png";
 import HomeImg02 from "../img/homeImg2.png"
 
 
 
 function HomePage() {
-
-    // api연동
-    // const [userName,setUserName]=useState('');
-    // const handleInput=async ()=>{
-    //     const apiUserName={
-    //         user_name:userName,
-    //     }
-    //     console.log(apiUserName);
-    //     try {
-    //         const requestBody={
-    //             user_name: userName,
-    //         }
-    //         const response=
-    //             await axios.patch(`${url주소}`,requestBody);
-    //         console.log('회원가입 성공 : ',response.data)
-    //     }catch (error){
-    //         console.error('회원가입 오류 발생 : ',error);
-    //     }
-    // };
   return (
     <>
         <Container>
