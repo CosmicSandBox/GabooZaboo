@@ -7,7 +7,7 @@ import {FaCheck} from "react-icons/fa6";
 import TestBoo from "../img/question.png"
 import TestMemo from "../img/testmemo.png";
 
-function TestEI () {
+function TestJP () {
     return (
         <>
             <Container>
@@ -27,7 +27,7 @@ function TestEI () {
                                     type={'button'}
                                     className={'BtnSize'}
                                     // onClick={handleBtn}
-                                    />
+                                />
                                 <p className={'answerText'}>질문입니다.</p>
                             </Btn>
                             <Btn>
@@ -86,8 +86,8 @@ function TestEI () {
                         </AnswerBtnDiv>
                         {/*01-4. 다음 문제 이동 버튼*/}
                         <NextButton type={'button'}>
-                            <Link href={'/testSN'}>
-                                <p>🌟 다음 질문 이동 3/12</p>
+                            <Link href={'/result'}>
+                                <p>결과 보러 가기</p>
                             </Link>
                         </NextButton>
                     </QuestionDiv>
@@ -237,4 +237,4 @@ const NextButton=styled.button`
     font-weight:bold;
   }
 `;
-export default TestEI;
+export default TestJP;

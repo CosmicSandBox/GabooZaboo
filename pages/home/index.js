@@ -4,7 +4,6 @@ import Link from "next/link";
 import styled from '@emotion/styled';
 import Image from "next/image";
 
-
 import GBJB from "../img/GBJB.png";
 import Home from "../img/home.png"
 
@@ -13,13 +12,13 @@ function HomePage() {
     return (
         <>
             <Container>
-                <Image src={GBJB} className={"Header"}/>
+                <Image src={GBJB} alt={"GBJB헤더"} className={"Header"}/>
                 <NicknameInput>
                     <input
                         className={'HomeInput'}
-                        maxLength={7}
+                        maxLength={5}
                         // onChange={(e)=>setUserName(e.target.value)}
-                        placeholder={'당신의 이름은?'}
+                        placeholder={'한글 5글자 이내!!'}
                     />
                 </NicknameInput>
                 <HomeBtn>
