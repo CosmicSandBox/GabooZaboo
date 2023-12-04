@@ -23,7 +23,7 @@ function Result () {
         {users.map((item, index)=>(
             <Container key={index}>
                 <Image src={GBJB} alt={"GBJB헤더"} className={"Header"}/>
-                <FirstResultImg name={item.name} mbti={item.mbti}/>
+                <FirstResultImg name={item.name} mbti={item.mbti.map((value) => value.toString()).join("")}/>
                 {/*<Test />*/}
                 <Link href={'/result/secondResult'}>
                     <FirstResultBtn>

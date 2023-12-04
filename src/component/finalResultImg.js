@@ -13,7 +13,7 @@ import { IoAirplane } from "react-icons/io5";
 import Flag from "@/imgTest/flag_img.png";
 import Boo from "@/imgTest/boo_img.png";
 
-function FinalResultImg(){
+function FinalResultImg({name, mbit}){
     return(
         <>
             <Container>
@@ -46,13 +46,13 @@ function FinalResultImg(){
                             {/*<p className={'passengerWrap'}>PASSENGER : 도마아아앙</p>*/}
                             <div className={'passengerDiv'}>
                                 <p>PASSENGER : </p>
-                                <p>도마아아앙</p>
+                                <p>{name}</p>
                             </div>
                             <div className={'GateSeatDiv'}>
                                 <p>GATE : 20 </p>
                                 <p className={'Seat'}>SEAT : 23A </p>
                             </div>
-                            <p>FLIGHT : 57901H</p>추
+                            <p>FLIGHT : 57901H</p>
                             <p>CLASS NAME : BUSINESS</p>
                         </DepartureUser>
                         <Line />
