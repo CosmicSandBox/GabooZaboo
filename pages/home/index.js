@@ -49,19 +49,19 @@ function HomePage() {
                             />
 
                     </NicknameInput>
-                    <HomeBtn>
+                    <HomeSubmitBtn>
                             <button
                                 type={"button"}
                                 onClick={handleSubmit}
                             >
                                 🦉 시작해보자Boo!!
                             </button>
-                    </HomeBtn>
-                <HomeChangeLanguage>
+                    </HomeSubmitBtn>
+                <HomeNextBtn>
                     <Link href={"/introduce"}>
                         <button>다음페이지 이동</button>
                     </Link>
-                </HomeChangeLanguage>
+                </HomeNextBtn>
                 <Image src={Home} className={"HomeImg"}/>
             </Container>
         </>
@@ -117,12 +117,38 @@ const NicknameInput=styled.div`
   }
 `;
 
-const HomeBtn=styled.div`
+const HomeSubmitBtn=styled.div`
   margin-top: 2rem;
   padding-top: 0.9rem;
   text-align: center;
   align-items: center;
   
+  width: 18.75rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+
+  border-radius: 3.125rem;
+  background: #f0f0f0;
+
+  z-index: 1;
+
+  button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #0095B5;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+`;
+
+const HomeNextBtn=styled.div`
+  margin-top: 0.5rem;
+  padding-top: 0.9rem;
+  text-align: center;
+  align-items: center;
+
   width: 18.75rem;
   height: 3.125rem;
   flex-shrink: 0;
@@ -141,11 +167,5 @@ const HomeBtn=styled.div`
       font-weight: bold;
     }
   }
-`;
-
-const HomeChangeLanguage=styled.div`
-  color: black;
-  z-index: 1;
-  margin-top: 1rem;
 `;
 export default HomePage;
