@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import FinalResultImg from "@/component/finalResultImg";
@@ -7,15 +7,33 @@ import { GrPowerReset } from "react-icons/gr";
 import { HiDownload } from "react-icons/hi";
 import { RiMenuAddLine } from "react-icons/ri";
 import { LuShare2 } from "react-icons/lu";
+import {getCollectionAll, ResetField} from "../../../firebase/fbase";
+import {CopyToClipboard} from "react-copy-to-clipboard/src";
 
 function FinalResult () {
+    // export const deleteField = async (collectionName,documentId,fieldName)=>{
+    const [users, setUsers] = useState([]);
+    const getUsers = async () => {
+        const data = await getCollectionAll("user");
+        setUsers(data);
+    };
+    useEffect(() => {
+        getUsers();
+    }, []);
+
+    const reset = () => {
+        ResetField("user", "user");
+        getUsers();
+    };
+    const currentUrl = window.location.href;
+
     return (
     <>
         <Container>
             <FinalResultImg />
             <button type={"button"} className={'Departure'}>🛫 출국하기</button>
             <ResultBtns>
-                <Btns type={"button"}>
+                <Btns type={"button"} onClick={reset}>
                     <Link href={'/'}>
                         <GrPowerReset />
                         <p>다시하기</p>
@@ -34,10 +52,13 @@ function FinalResult () {
                 {/*<Link href={'/result/secondResult'}>*/}
                 {/*    <button type={"button"}>뒤로가기</button>*/}
                 {/*</Link>*/}
-                <Btns type={'button'}>
-                    <LuShare2 />
-                    <p>공유하기</p>
-                </Btns>
+                <CopyToClipboard text={currentUrl}>
+                    <Btns type={'button'}>
+                        <LuShare2 />
+                        <p>공유하기</p>
+                    </Btns>
+                </CopyToClipboard>
+
             </ResultBtns>
         </Container>
     </>

@@ -11,7 +11,7 @@ function anotherResult () {
     return (
     <>
         <Container>
-            <FinalResultImg />
+            <FinalResultImg name={"BOO"} />
             <button type={"button"} className={'Departure'}>🛫 출국하기</button>
             <ResultBtns>
                 <Btns type={"button"}>

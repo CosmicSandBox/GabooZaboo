@@ -54,9 +54,10 @@ export const addDocument = async (collectionName, data) => {
 };
 
 // 문서 삭제
-export const deleteDocument = async (collectionName, documentId) => {
-  await deleteDoc(doc(db, collectionName, documentId));
-};
+// export const deleteDocument = async (collectionName, documentId) => {
+//   await deleteDoc(doc(db, collectionName, documentId));
+// };
+
 
 // 문서 수정
 export const updateDocument = async (collectionName, documentId, data) => {
@@ -92,6 +93,19 @@ export const  updateField = async (collectionName, documentId ,fieldName,element
     name:arrayUnion(element),
   })
 }
+
+//원하는 필드 삭제
+export const ResetField = async (collectionName,documentId)=>{
+  const data = doc(db, collectionName, documentId);
+  await updateDoc(data, {
+    name: deleteField(),
+    mbti:  deleteField()
+  });
+}
+
+
+
+
 
 
 //쿼리사용
