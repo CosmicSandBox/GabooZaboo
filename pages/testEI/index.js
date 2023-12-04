@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import {FaCheck} from "react-icons/fa6";
 
-import TestBoo from "@/img/question.png"
+import TestBoo from "@/img/question.png";
 import TestMemo from "@/img/testmemo.png";
 import {getCollectionAll, updateArray} from "../../firebase/fbase";
 
@@ -219,7 +219,7 @@ const Question=styled.div`
     margin-top: 6.3rem;
     margin-left: 5.5rem;
 
-    color: red;
+    color: #2F5B79;
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 700;

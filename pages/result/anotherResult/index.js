@@ -3,9 +3,7 @@ import styled from "@emotion/styled";
 import FinalResultImg from "@/component/finalResultImg";
 import Link from "next/link";
 import {GrPowerReset} from "react-icons/gr";
-import {HiDownload} from "react-icons/hi";
 import {RiMenuAddLine} from "react-icons/ri";
-import {LuShare2} from "react-icons/lu";
 
 function anotherResult () {
     return (
@@ -20,23 +18,12 @@ function anotherResult () {
                         <p>다시하기</p>
                     </Link>
                 </Btns>
-                {/*<Btns type={"button"}>*/}
-                {/*    <HiDownload />*/}
-                {/*    <p>저장</p>*/}
-                {/*</Btns>*/}
                 <Btns type={"button"}>
                     <Link href={'/category'}>
                         <RiMenuAddLine />
                         <p>다른 결과 보러가기</p>
                     </Link>
                 </Btns>
-                {/*<Link href={'/result/secondResult'}>*/}
-                {/*    <button type={"button"}>뒤로가기</button>*/}
-                {/*</Link>*/}
-                {/*<Btns type={'button'}>*/}
-                {/*    <LuShare2 />*/}
-                {/*    <p>공유하기</p>*/}
-                {/*</Btns>*/}
             </ResultBtns>
         </Container>
     </>
@@ -47,7 +34,10 @@ function anotherResult () {
 
 
 const Container=styled.div`
-
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
     .Departure{
       width: 9.5625rem;
       height: 2.3125rem;
@@ -69,14 +59,14 @@ const Container=styled.div`
     }
 `;
 const ResultBtns=styled.div`
-  position: absolute;
-  left:2rem;
-  bottom: 1.5rem;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  
+  flex: 1;
+  
+  margin-top: 1rem;
   
   outline: none;
   border: none;
@@ -93,8 +83,7 @@ const Btns=styled.button`
 
   background-color: transparent;
   color: #2F5B79;
-  text-align: center;
-  font-size: 0.625rem;
+  font-size: 0.725rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

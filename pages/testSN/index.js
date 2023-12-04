@@ -219,7 +219,7 @@ const Question=styled.div`
     margin-top: 6.3rem;
     margin-left: 5.5rem;
 
-    color: red;
+    color: #2F5B79;
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 700;

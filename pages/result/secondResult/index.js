@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import SecondResultImg from "@/component/secondResultImg";
+import {IMAGES_MANIFEST} from "next/constants";
+import Image from "next/image";
 
 function SecondResult () {
     return (
@@ -14,7 +16,7 @@ function SecondResult () {
                         <p>🔙 이전 내용 보기</p>
                     </ResultBtn>
                 </Link>
-                <Link href={'/result/finalResult'}>
+                <Link href={'/loading'}>
                     <ResultBtn className={'FinalResultBtn'}>
                         <p>📚 최종 결과 보기</p>
                     </ResultBtn>
@@ -24,7 +26,10 @@ function SecondResult () {
     </>
     );
   }
-const Container=styled.div``;
+const Container=styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const Btns=styled.div`
   display: flex;
   flex-direction: column;
@@ -35,8 +40,6 @@ const Btns=styled.div`
   //bottom: 8rem;
   left: 2.75rem;
 
-
-  position: absolute;
   bottom: 3rem;
 `;
 const ResultBtn=styled.button`

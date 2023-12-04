@@ -5,7 +5,7 @@ import Image from "next/image";
 import {FaCheck} from "react-icons/fa6";
 
 import TestBoo from "@/img/question.png"
-import TestMemo from "@/img/testMemo.png"
+import TestMemo from "@/img/testmemo.png"
 import {getCollectionAll, updateArray} from "../../firebase/fbase";
 
 function TestTest () {
@@ -63,7 +63,7 @@ function TestTest () {
                                 {/*img랑 p태그 위치 바꾸기. p태그가 상단에 있게*/}
                                 <p className={'Question-text'}>{item.id_1.q}</p>
                                 <QuestionImg>
-                                    <Image src={TestMemo}/>
+                                    <Image src={TestMemo }/>
                                 </QuestionImg>
                             </Question>
                             {/*01-1-2.선택지*/}
