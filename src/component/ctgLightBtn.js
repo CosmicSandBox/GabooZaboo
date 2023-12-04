@@ -6,7 +6,7 @@ function CtgLightBtn({mbti}){
 
     return(
         <>
-            <Link href={'/result/anotherResult'}>
+            <Link href={`/result/anotherResult/${mbti}`}>
                 <LightBtn type={'button'}>
                     <p>{mbti}</p>
                 </LightBtn>

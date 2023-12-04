@@ -11,7 +11,6 @@ import {getCollectionAll, ResetField} from "../../../firebase/fbase";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";
 
 function FinalResult () {
-    // export const deleteField = async (collectionName,documentId,fieldName)=>{
     const [users, setUsers] = useState([]);
     const getUsers = async () => {
         const data = await getCollectionAll("user");
@@ -29,38 +28,42 @@ function FinalResult () {
 
     return (
     <>
-        <Container>
-            <FinalResultImg />
-            <button type={"button"} className={'Departure'}>🛫 출국하기</button>
-            <ResultBtns>
-                <Btns type={"button"} onClick={reset}>
-                    <Link href={'/'}>
-                        <GrPowerReset />
-                        <p>다시하기</p>
-                    </Link>
-                </Btns>
-                <Btns type={"button"}>
-                    <HiDownload />
-                    <p>저장</p>
-                </Btns>
-                <Btns type={"button"}>
-                    <Link href={'/category'}>
-                        <RiMenuAddLine />
-                        <p>다른 결과 보러가기</p>
-                    </Link>
-                </Btns>
-                {/*<Link href={'/result/secondResult'}>*/}
-                {/*    <button type={"button"}>뒤로가기</button>*/}
-                {/*</Link>*/}
-                <CopyToClipboard text={currentUrl}>
-                    <Btns type={'button'}>
-                        <LuShare2 />
-                        <p>공유하기</p>
+        {users.map((item, index)=>(
+            <Container key={index}>
+                <FinalResultImg name={item.name} mbti={item.mbti.map((value) => value.toString()).join("")} />
+                {/*출국하기 스카이스캐너*/}
+                <button type={"button"} className={'Departure'}>🛫 출국하기</button>
+                <ResultBtns>
+                    <Btns type={"button"} onClick={reset}>
+                        <Link href={'/'}>
+                            <GrPowerReset />
+                            <p>다시하기</p>
+                        </Link>
                     </Btns>
-                </CopyToClipboard>
+                    <Btns type={"button"}>
+                        <HiDownload />
+                        <p>저장</p>
+                    </Btns>
+                    <Btns type={"button"}>
+                        <Link href={'/category'}>
+                            <RiMenuAddLine />
+                            <p>다른 결과 보러가기</p>
+                        </Link>
+                    </Btns>
+                    {/*<Link href={'/result/secondResult'}>*/}
+                    {/*    <button type={"button"}>뒤로가기</button>*/}
+                    {/*</Link>*/}
+                    <CopyToClipboard text={currentUrl}>
+                        <Btns type={'button'}>
+                            <LuShare2 />
+                            <p>공유하기</p>
+                        </Btns>
+                    </CopyToClipboard>
 
-            </ResultBtns>
-        </Container>
+                </ResultBtns>
+            </Container>
+        ))}
+
     </>
     );
   }

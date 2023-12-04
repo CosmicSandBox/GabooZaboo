@@ -13,11 +13,11 @@ import Flag from "@/imgTest/flag_img.png";
 import Boo from "@/imgTest/boo_img.png";
 import {findMbti, getCollectionAll, getDocument} from "../../firebase/fbase";
 
-function FinalResultImg({name,mbti: myMbti }){
+function AnotherResultImg({name,mbti: myMbti }){
 
     const [data, setData] = useState([]);
     const getData = async () => {
-        const res = await findMbti("mbti_feature","ENFP");
+        const res = await findMbti("mbti_feature",myMbti);
         setData(res);
         console.log("@@@@@@@@data",data)
         console.log("myMbti",myMbti)
@@ -45,8 +45,7 @@ function FinalResultImg({name,mbti: myMbti }){
                         <NationContent>
                             <p className={'boardingPass'}>BOARDING PASS</p>
                             <DepartureHeader>
-                                <p>{item.mbti}</p>
-                                {/*<p>HUFS</p>*/}
+                                <p>HUFS</p>
                                 <IoAirplane />
                                 {/*02-1.원본코드 - 이거 사용하세용*/}
                                 {/*<p>{'airport'}</p>*/}
@@ -81,12 +80,11 @@ function FinalResultImg({name,mbti: myMbti }){
 
                                 {/*02-2.테스트용 코드*/}
                                 <p className={'recommendTitle'}>추천 여행지 :</p>
-                                {item.location_list.map((loc, index)=>(
-                                    <div key={index} className={'recommendContents'}>
-                                        <p>{loc}</p>
-                                    </div>
-                                ))}
-
+                                <div className={'recommendContents'}>
+                                    <p>아그라 - 타지마할아그라 - 타지마할아그라 - 타지마할아그라 - 타지마할아그라 - 타지마할아그라 - 타지마할</p>
+                                    <p>자이푸르 - 안 벨성</p>
+                                    <p>뉴델리 - 꾸뚭 미나르</p>
+                                </div>
                             </RecommendPlace>
                             <ContentBottom>
                                 <BottomHeader>
@@ -285,4 +283,4 @@ const Line=styled.div`
   background-color: #2F5B79;
   margin: 1rem 0;
 `;
-export default FinalResultImg
+export default AnotherResultImg

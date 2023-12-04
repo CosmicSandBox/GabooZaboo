@@ -6,44 +6,46 @@ import {GrPowerReset} from "react-icons/gr";
 import {HiDownload} from "react-icons/hi";
 import {RiMenuAddLine} from "react-icons/ri";
 import {LuShare2} from "react-icons/lu";
+import AnotherResultImg from "@/component/anotherResults";
 
 function anotherResult () {
+
     return (
-    <>
-        <Container>
-            <FinalResultImg name={"BOO"} />
-            <button type={"button"} className={'Departure'}>🛫 출국하기</button>
-            <ResultBtns>
-                <Btns type={"button"}>
-                    <Link href={'/'}>
-                        <GrPowerReset />
-                        <p>다시하기</p>
-                    </Link>
-                </Btns>
-                {/*<Btns type={"button"}>*/}
-                {/*    <HiDownload />*/}
-                {/*    <p>저장</p>*/}
-                {/*</Btns>*/}
-                <Btns type={"button"}>
-                    <Link href={'/category'}>
-                        <RiMenuAddLine />
-                        <p>다른 결과 보러가기</p>
-                    </Link>
-                </Btns>
-                {/*<Link href={'/result/secondResult'}>*/}
-                {/*    <button type={"button"}>뒤로가기</button>*/}
-                {/*</Link>*/}
-                {/*<Btns type={'button'}>*/}
-                {/*    <LuShare2 />*/}
-                {/*    <p>공유하기</p>*/}
-                {/*</Btns>*/}
-            </ResultBtns>
-        </Container>
-    </>
+        <>
+            <Container>
+                <AnotherResultImg name={"BOO"} mbti={"ENFP"} />
+                <button type={"button"} className={'Departure'}>🛫 출국하기</button>
+                <ResultBtns>
+                    <Btns type={"button"}>
+                        <Link href={'/'}>
+                            <GrPowerReset />
+                            <p>다시하기</p>
+                        </Link>
+                    </Btns>
+                    {/*<Btns type={"button"}>*/}
+                    {/*    <HiDownload />*/}
+                    {/*    <p>저장</p>*/}
+                    {/*</Btns>*/}
+                    <Btns type={"button"}>
+                        <Link href={'/category'}>
+                            <RiMenuAddLine />
+                            <p>다른 결과 보러가기</p>
+                        </Link>
+                    </Btns>
+                    {/*<Link href={'/result/secondResult'}>*/}
+                    {/*    <button type={"button"}>뒤로가기</button>*/}
+                    {/*</Link>*/}
+                    {/*<Btns type={'button'}>*/}
+                    {/*    <LuShare2 />*/}
+                    {/*    <p>공유하기</p>*/}
+                    {/*</Btns>*/}
+                </ResultBtns>
+            </Container>
+        </>
     );
-  }
-  
-  export default anotherResult;
+}
+
+export default anotherResult;
 
 
 const Container=styled.div`

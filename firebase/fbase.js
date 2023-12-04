@@ -34,12 +34,10 @@ export const getCollectionAll = async (collectionName) => {
 };
 
 // 문서 한개 가져오기
-
-
 export const getDocument = async (collectionName, documentId) => {
   const docSnap = await getDoc(doc(db, collectionName, documentId));
   return {
-    id: docSnap.id,
+    // id: docSnap.id,
     ...docSnap.data(),
   };
 };
@@ -104,42 +102,20 @@ export const ResetField = async (collectionName,documentId)=>{
 }
 
 
-
-
-
-
-//쿼리사용
-// export const useQuery = async (collectionName, fieldName, find) => {
-//   const queryC = collection(db, collectionName);
-//   const q = query(queryC, where(fieldName, '==', find));
-//   const querySnapshot = await getDocs(q);
-//   let userMbti;
-//   querySnapshot.forEach((doc) => {
-//     console.log(doc.id, ' => ', doc.data(),"이게머야");
-//     userMbti = doc(db, collectionName, 'user_mbti');
-//     addDocument(collectionName, {
-//       ...doc.data(),
-//     });
-//   });
-//   console.log("@@@@@@userMbti",userMbti)
-//   return userMbti
-//
-// };
-
-// export const useQuery = async (collectionName,fieldName,find) =>{
-//   const queryC = collection(db, collectionName);
-//   const q = query(queryC, where(fieldName, "==", find));
-//   const querySnapshot = await getDocs(q);
-//   querySnapshot.forEach((doc) => {
-//     // doc.data() is never undefined for query doc snapshots
-//     console.log(doc.id, " => ", doc.data());
-//     let user_mbti = doc(db, collectionName, 'user_mbti');
-//     setDoc(user_mbti, {
-//       ...doc.data(), });
-//   });
-//   return(
-//       user_mbti
-//   )
-//
-// }
-
+export const findMbti = async (collectionName,documentId) =>{
+  const docRef = doc(db, collectionName, documentId);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    let data = [];
+    data.push({
+    id: docSnap.id,
+    ...docSnap.data(),
+  });
+    console.log("data",data)
+    return data;
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
