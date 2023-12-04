@@ -70,13 +70,12 @@ const ContentDiv=styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 const ContentHeader=styled.div`
   display: flex;
   flex-direction: row;
-  text-align:left;
-  align-items: flex-start;
+  align-items: center;
+  
   p{
     margin-left: 1rem;
     font-size: 1.5rem;
@@ -89,7 +88,7 @@ const ContentText=styled.div`
   align-items: center;
   text-align: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   
 `;
 export default FirstResultImg;

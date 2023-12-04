@@ -7,6 +7,7 @@ import {FaCheck} from "react-icons/fa6";
 import TestBoo from "@/img/question.png"
 import TestMemo from "@/img/testmemo.png";
 import {getCollectionAll, updateArray} from "../../firebase/fbase";
+import GBJB from "@/img/GBJB.png";
 
 function TestSN () {
 
@@ -56,6 +57,7 @@ function TestSN () {
         <>
             {qnaData.map((item, index)=>(
                 <Container key={index}>
+                    <Image src={GBJB} className={"Header"}/>
                     <div>
                         {/*01-1.문제랑 선택지 div*/}
                         <QuestionDiv>
@@ -175,6 +177,13 @@ const Container=styled.div`
   .booImg{
     margin-top: 1rem;
   }
+  .Header{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    z-index: 1;
+  }
 `;
 //질문 메모지랑 버튼 2개 div
 const QuestionDiv=styled.div`
@@ -219,7 +228,7 @@ const Question=styled.div`
     margin-top: 6.3rem;
     margin-left: 5.5rem;
 
-    color: red;
+    color: #2F5B79;
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 700;
@@ -248,7 +257,7 @@ const QuestionImg=styled.image`
 
   position: absolute;
   //margin: 1.25rem;
-  margin-left: 2.5rem;
+  margin-left: 2.7rem;
   margin-top: 0.5rem;
 `
 
@@ -256,7 +265,7 @@ const QuestionImg=styled.image`
 const AnswerBtnDiv=styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 1.6rem;
 `;
 
 //버튼 요소 div
@@ -274,10 +283,13 @@ const Btn=styled.div`
   margin: 0.5rem;
 
   border-radius: 1.25rem;
-  border-color: #0095B5;
+  border-color: #f0f0f0;
   border-style: solid;
-  background: #FFF;
 
+  &:hover{
+    border-color: #0095B5;
+  }
+  
   p{
     margin: auto 0.5rem;
     flex-wrap: wrap;
@@ -317,17 +329,12 @@ const NextButton=styled.button`
   margin-top: 0.5rem;
 
   border-radius: 3.125rem;
-  background-color: white;
-  color: #2F5B79;
-  font-weight: bold;
+  background: #0095B5;
+  color: white;
+  font-weight:bold;
 
   border: none;
   outline: none;
-
-  &:hover{
-    background: #0095B5;
-    color: white;
-    font-weight:bold;
-  }
+  
 `;
 export default TestSN;
