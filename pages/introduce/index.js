@@ -26,7 +26,7 @@ function IntroducePage () {
                 {/*        type={'button'}*/}
                 {/*    >🛫 테스트하러 가부자부!!</GotoBtn>*/}
                 {/*</Link>*/}
-                <Link href={'/testTest'}>
+                <Link href={'/testEI'}>
                     <GotoBtn
                         type={'button'}
                     >🛫 테스트하러 가부자부!!</GotoBtn>
