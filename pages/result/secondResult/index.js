@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
-import SecondResultImg from "../../../component/secondResultImg";
+import SecondResultImg from "@/component/secondResultImg";
 
 function SecondResult () {
     return (

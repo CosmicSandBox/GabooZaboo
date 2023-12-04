@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
-import File from "../pages/img/file.png"
+import File from "@/img/file.png"
 import Image from "next/image";
 
-import Flag from "../pages/imgTest/flag_img.png"
+import Flag from "@/imgTest/flag_img.png"
 
 import {ImGift} from "react-icons/im";
 function FirstResultImg(){

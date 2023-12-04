@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Image from "next/image";
-import CategoryBtns from "../../component/categoryBtns";
-import CtgLightBtn from "../../component/ctgLightBtn";
-import CtgDarkBtn from "../../component/ctgDarkBtn";
+import CategoryBtns from "@/component/categoryBtns";
+import CtgLightBtn from "@/component/ctgLightBtn";
+import CtgDarkBtn from "@/component/ctgDarkBtn";
 
-import GBJB from "../img/GBJB.png";
+import GBJB from "@/img/GBJB.png";
 import Link from "next/link";
 
 function CategoryPage () {

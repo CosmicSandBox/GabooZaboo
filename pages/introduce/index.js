@@ -3,8 +3,8 @@ import Link from "next/link";
 import styled from "@emotion/styled";
 import Image from "next/image";
 
-import Memo from "../img/introduce.png";
-import GBJB from "../img/GBJB.png";
+import Memo from "@/img/introduce.png";
+import GBJB from "@/img/GBJB.png";
 
 function IntroducePage () {
     return (
