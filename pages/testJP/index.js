@@ -147,7 +147,7 @@ function TestJP () {
 
                         {/*01-4. 다음 문제 이동 버튼*/}
                         <NextButton type={'submit'} onClick={submitJnP}>
-                            <Link href={'/testJP'}>
+                            <Link href={'/result'}>
                                 <p>결과 보러 가기</p>
                             </Link>
                         </NextButton>
