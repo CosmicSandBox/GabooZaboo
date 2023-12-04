@@ -106,7 +106,7 @@ function TestEI () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("I")}/>
-                                    <p className={'answerText'}>{item.id_2.a1}</p>
+                                    <p className={'answerText'}>{item.id_2.a2}</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -131,7 +131,7 @@ function TestEI () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("I")}/>
-                                    <p className={'answerText'}>{item.id_3.a1}</p>
+                                    <p className={'answerText'}>{item.id_3.a2}</p>
                                 </Btn>
                             </AnswerBtnDiv>
                             {/*01-4. 다음 문제 이동 버튼*/}

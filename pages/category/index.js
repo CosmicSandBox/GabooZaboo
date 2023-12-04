@@ -15,62 +15,28 @@ function CategoryPage () {
             <Image src={GBJB} alt={'GBJB헤더'} className={'Header'}/>
             <BtnsDiv>
                 <IsDiv>
-                    <CtgLightBtn>
-                        {/*link로 연결하심 됩니당*/}
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
+                    <CtgLightBtn mbti={'ISTJ'}/>
+                    <CtgLightBtn mbti={'ISFJ'}/>
+                    <CtgLightBtn mbti={'ISTP'}/>
+                    <CtgLightBtn mbti={'ISFP'}/>
                 </IsDiv>
                 <EsDiv>
-                    <CtgDarkBtn>
-                        {/*link로 연결하심 됩니당*/}
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
+                    <CtgDarkBtn mbti={'ESTJ'}/>
+                    <CtgDarkBtn  mbti={'ESFJ'}/>
+                    <CtgDarkBtn mbti={'ESTP'}/>
+                    <CtgDarkBtn  mbti={'ESFP'}/>
                 </EsDiv>
                 <InDiv>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
-                    <CtgLightBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgLightBtn>
+                    <CtgLightBtn mbti={'INTJ'}/>
+                    <CtgLightBtn mbti={'INFJ'}/>
+                    <CtgLightBtn mbti={'INTP'}/>
+                    <CtgLightBtn mbti={'INFP'}/>
                 </InDiv>
                 <EnDiv>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
-                    <CtgDarkBtn>
-                        {/*<Link href={}/>*/}
-                    </CtgDarkBtn>
+                    <CtgDarkBtn mbti={'ENTJ'}/>
+                    <CtgDarkBtn  mbti={'ENFJ'}/>
+                    <CtgDarkBtn mbti={'ENTP'}/>
+                    <CtgDarkBtn  mbti={'ENFP'}/>
                 </EnDiv>
             </BtnsDiv>
             <ReturnFinalBtn type={'button'}>

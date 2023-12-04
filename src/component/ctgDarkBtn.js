@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
-function CtgDarkBtn(){
+function CtgDarkBtn({mbti}){
 
     return(
         <>
-            <DarkBtn>
-                <p>whwehlTek</p>
-            </DarkBtn>
+            <Link href={'/result/anotherResult'}>
+                <DarkBtn>
+                    <p>{mbti}</p>
+                </DarkBtn>
+            </Link>
+
         </>
     )
 }
