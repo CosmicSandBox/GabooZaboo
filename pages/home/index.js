@@ -1,37 +1,66 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
-
 import styled from '@emotion/styled';
 import Image from "next/image";
 import GBJB from "@/img/GBJB.png";
 import Home from "@/img/home.png"
+import {getCollectionAll, updateField} from "../../firebase/fbase";
 
 
 function HomePage() {
+    const [users, setUsers] = useState([]);
+    const [name, setName] = useState("");
+
+    const nameChange = (e) => {
+        setName(e.target.value);
+    };
+
+    const getUsers = async () => {
+        const data = await getCollectionAll("user");
+        setUsers(data);
+        console.log("users",users)
+    };
+    useEffect(() => {
+        getUsers();
+    }, []);
+
+    const resetForm = () => {
+        setName("");
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        resetForm();
+        updateField("user", "user", "name",name);
+        getUsers();
+    };
+
     return (
         <>
             <Container>
                 <Image src={GBJB} alt={"GBJB헤더"} className={"Header"}/>
-                <NicknameInput>
-                    <input
-                        className={'HomeInput'}
-                        maxLength={5}
-                        // onChange={(e)=>setUserName(e.target.value)}
-                        placeholder={'한글 5글자 이내!!'}
-                    />
-                </NicknameInput>
-                <HomeBtn>
-                    <Link href={"/introduce"}>
-                        <button
-                            type={"button"}
-                            // onClick={handleInput}
-                        >
-                            🦉 시작해보자Boo!!
-                        </button>
-                    </Link>
-                </HomeBtn>
+                    <NicknameInput>
+                            <input
+                                className={'HomeInput'}
+                                maxLength={5}
+                                placeholder={'한글 5글자 이내!!'}
+                                type="text"
+                                value={name}
+                                onChange={nameChange}
+                            />
+
+                    </NicknameInput>
+                    <HomeBtn>
+                            <button
+                                type={"button"}
+                                onClick={handleSubmit}
+                            >
+                                🦉 시작해보자Boo!!
+                            </button>
+                    </HomeBtn>
                 <HomeChangeLanguage>
-                    <p>한국어 / 영어</p>
+                    <Link href={"/introduce"}>
+                        <button>다음페이지 이동</button>
+                    </Link>
                 </HomeChangeLanguage>
                 <Image src={Home} className={"HomeImg"}/>
             </Container>
