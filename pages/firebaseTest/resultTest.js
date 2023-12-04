@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   addDocument,
   getCollectionAll,
-  getDocument, overwrightDocument, updateArray,
+  getDocument, updateArray,
   updateDocument,
 } from "../../firebase/fbase";
 import css from "styled-jsx/css";
