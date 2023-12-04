@@ -3,9 +3,8 @@ import Link from "next/link";
 
 import styled from '@emotion/styled';
 import Image from "next/image";
-
-import GBJB from "../img/GBJB.png";
-import Home from "../img/home.png"
+import GBJB from "@/img/GBJB.png";
+import Home from "@/img/home.png"
 
 
 function HomePage() {

@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import FirstResultImg from "../../component/firstResultImg";
+import FirstResultImg from "@/component/firstResultImg";
 import styled from "@emotion/styled";
 
-import GBJB from "../img/GBJB.png";
+import GBJB from "@/img/GBJB.png";
 import Image from "next/image";
 
 function Result () {

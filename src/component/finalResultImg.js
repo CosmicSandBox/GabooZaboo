@@ -3,15 +3,15 @@ import Link from "next/link";
 import styled from "@emotion/styled";
 import Image from "next/image";
 
-import Barcode from "../pages/img/barcode.png";
-import Barcode02 from "../pages/img/barcode02.png";
-import Ticket from '../pages/img/finalResultImg.png';
+import Barcode from "@/img/barcode.png";
+import Barcode02 from "@/img/barcode02.png";
+import Ticket from '@/img/finalResultImg.png';
 import { IoAirplane } from "react-icons/io5";
 
 
 //test용 img
-import Flag from "../pages/imgTest/flag_img.png";
-import Boo from "../pages/imgTest/boo_img.png";
+import Flag from "@/imgTest/flag_img.png";
+import Boo from "@/imgTest/boo_img.png";
 
 function FinalResultImg(){
     return(

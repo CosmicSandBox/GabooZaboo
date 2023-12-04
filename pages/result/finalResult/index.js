@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
-import FinalResultImg from "../../../component/finalResultImg";
+import FinalResultImg from "@/component/finalResultImg";
 
 import { GrPowerReset } from "react-icons/gr";
 import { HiDownload } from "react-icons/hi";

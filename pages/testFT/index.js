@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import {FaCheck} from "react-icons/fa6";
 
-import TestBoo from "../img/question.png"
-import TestMemo from "../img/testmemo.png";
+import TestBoo from "@/img/question.png"
+import TestMemo from "@/img/testmemo.png";
 
 function TestFT () {
     return (
