@@ -6,7 +6,7 @@ function CtgDarkBtn({mbti}){
 
     return(
         <>
-            <Link href={'/result/anotherResult'}>
+            <Link href={`/result/anotherResult/${mbti}`}>
                 <DarkBtn>
                     <p>{mbti}</p>
                 </DarkBtn>

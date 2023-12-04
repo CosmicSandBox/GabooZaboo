@@ -28,9 +28,11 @@ function FinalResult () {
 
     return (
     <>
-        {users.map((item, index)=>(
-            <Container key={index}>
+
+            <Container>
+                {users.map((item, index)=>(
                 <FinalResultImg name={item.name} mbti={item.mbti.map((value) => value.toString()).join("")} />
+                ))}
                 {/*출국하기 스카이스캐너*/}
                 <button type={"button"} className={'Departure'}>🛫 출국하기</button>
                 <ResultBtns>
@@ -62,7 +64,7 @@ function FinalResult () {
 
                 </ResultBtns>
             </Container>
-        ))}
+
 
     </>
     );

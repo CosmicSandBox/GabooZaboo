@@ -7,13 +7,17 @@ import {HiDownload} from "react-icons/hi";
 import {RiMenuAddLine} from "react-icons/ri";
 import {LuShare2} from "react-icons/lu";
 import AnotherResultImg from "@/component/anotherResults";
+import {useRouter} from "next/router";
 
 function anotherResult () {
+    const router = useRouter()
+    const category_mbti = router.query.id;
+    console.log("category_mbti",category_mbti)
 
     return (
         <>
             <Container>
-                <AnotherResultImg name={"BOO"} mbti={"ENFP"} />
+                <AnotherResultImg name={"BOO"} mbti={category_mbti} />
                 <button type={"button"} className={'Departure'}>🛫 출국하기</button>
                 <ResultBtns>
                     <Btns type={"button"}>

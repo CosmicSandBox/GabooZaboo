@@ -13,14 +13,14 @@ import Flag from "@/imgTest/flag_img.png";
 import Boo from "@/imgTest/boo_img.png";
 import {findMbti, getCollectionAll, getDocument} from "../../firebase/fbase";
 
-function AnotherResultImg({name,mbti: myMbti }){
+function AnotherResultImg({name,mbti: Mbti }){
 
     const [data, setData] = useState([]);
     const getData = async () => {
-        const res = await findMbti("mbti_feature",myMbti);
+        const res = await findMbti("mbti_feature",Mbti);
         setData(res);
         console.log("@@@@@@@@data",data)
-        console.log("myMbti",myMbti)
+        console.log("myMbti",Mbti)
     };
 
     useEffect(() => {
@@ -45,7 +45,8 @@ function AnotherResultImg({name,mbti: myMbti }){
                         <NationContent>
                             <p className={'boardingPass'}>BOARDING PASS</p>
                             <DepartureHeader>
-                                <p>HUFS</p>
+                                {/*<p>HUFS</p>*/}
+                                <p>{item.mbti}</p>
                                 <IoAirplane />
                                 {/*02-1.원본코드 - 이거 사용하세용*/}
                                 {/*<p>{'airport'}</p>*/}
