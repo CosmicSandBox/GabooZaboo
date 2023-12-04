@@ -21,7 +21,12 @@ function IntroducePage () {
                     </MemoText>
                     <Image src={Memo} className={'IntroduceMemo'}/>
                 </MemoDiv>
-                <Link href={'/testEI'}>
+                {/*<Link href={'/testEI'}>*/}
+                {/*    <GotoBtn*/}
+                {/*        type={'button'}*/}
+                {/*    >🛫 테스트하러 가부자부!!</GotoBtn>*/}
+                {/*</Link>*/}
+                <Link href={'/testTest'}>
                     <GotoBtn
                         type={'button'}
                     >🛫 테스트하러 가부자부!!</GotoBtn>
