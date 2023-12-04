@@ -52,7 +52,7 @@ function FinalResultImg(){
                                 <p>GATE : 20 </p>
                                 <p className={'Seat'}>SEAT : 23A </p>
                             </div>
-                            <p>FLIGHT : 57901H</p>
+                            <p>FLIGHT : 57901H</p>추
                             <p>CLASS NAME : BUSINESS</p>
                         </DepartureUser>
                         <Line />

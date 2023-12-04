@@ -1,24 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import FirstResultImg from "@/component/firstResultImg";
 import styled from "@emotion/styled";
 
 import GBJB from "@/img/GBJB.png";
 import Image from "next/image";
+import {getCollectionAll} from "../../firebase/fbase";
 
 function Result () {
+    const [users, setUsers] = useState([]);
+    // export const getDocument = async (collectionName, documentId) => {
+    const getUsers = async () => {
+        const data = await getCollectionAll("user");
+        setUsers(data);
+        console.log("users",users)
+    };
+    useEffect(() => {
+        getUsers();
+    }, []);
     return (
     <>
-        <Container>
-            <Image src={GBJB} alt={"GBJB헤더"} className={"Header"}/>
-            <FirstResultImg />
-            {/*<Test />*/}
-            <Link href={'/result/secondResult'}>
-                <FirstResultBtn>
-                    <p>다음</p>
-                </FirstResultBtn>
-            </Link>
-        </Container>
+        {users.map((item, index)=>(
+            <Container key={index}>
+                <Image src={GBJB} alt={"GBJB헤더"} className={"Header"}/>
+                <FirstResultImg name={item.name} mbti={item.mbti}/>
+                {/*<Test />*/}
+                <Link href={'/result/secondResult'}>
+                    <FirstResultBtn>
+                        <p>다음</p>
+                    </FirstResultBtn>
+                </Link>
+            </Container>
+        ))}
+
     </>
     );
   }

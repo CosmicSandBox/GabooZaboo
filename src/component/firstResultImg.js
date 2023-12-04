@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
@@ -8,34 +8,45 @@ import Image from "next/image";
 import Flag from "@/imgTest/flag_img.png"
 
 import {ImGift} from "react-icons/im";
-function FirstResultImg(){
+import {getCollectionAll} from "../../firebase/fbase";
+function FirstResultImg({name, mbti}){
+    const [data, setData] = useState([]);
+    const getRecommend = async () => {
+        const res = await getCollectionAll("recommend");
+        setData(res);
+    };
+    useEffect(() => {
+        getRecommend();
+    }, []);
 
     return(
         <>
-            <Container>
-                <Image src={File} className={'bgImg'} alt={'Bg파일이미지'}/>
-                <ContentDiv>
-                    <ContentHeader>
-                        {/*원본코드-이거 사용하시면 됩니당*/}
-                        {/*<Image src={'flag_img'} alt={'flag_img'}/>*/}
+            {data.map((item, index)=>(
+                <Container key={index}>
+                    <Image src={File} className={'bgImg'} alt={'Bg파일이미지'}/>
+                    <ContentDiv>
+                        <ContentHeader>
+                            {/*원본코드-이거 사용하시면 됩니당*/}
+                            {/*<Image src={'flag_img'} alt={'flag_img'}/>*/}
+                            {/*테스트용 코드*/}
+                            <Image src={Flag} alt={'flag_img'}/>
+                            <p>{item.country}</p>
+                        </ContentHeader>
+                        <ContentText>
+                            {/*원본코드-이거 사용하심 됩니당~*/}
+                            {/*<p>{say_hello}</p>*/}
+                            {/*<p>{user_name} 의 여행스타일은 {user_mbti}네!</p>*/}
+                            {/*<p>그럼 {country} 은/는 어때?</p>*/}
 
-                        {/*테스트용 코드*/}
-                        <Image src={Flag} alt={'flag_img'}/>
-                        <p>인도</p>
-                    </ContentHeader>
-                    <ContentText>
-                        {/*원본코드-이거 사용하심 됩니당~*/}
-                        {/*<p>{say_hello}</p>*/}
-                        {/*<p>{user_name} 의 여행스타일은 {user_mbti}네!</p>*/}
-                        {/*<p>그럼 {country} 은/는 어때?</p>*/}
+                            <p>{item.sya_hello}</p>
+                            <p>{name} 여행스타일은 {mbti}네!</p>
+                            <p>그럼 {item.country} 은/는 어때?</p>
+                        </ContentText>
+                    </ContentDiv>
 
-                        <p>say_hello</p>
-                        <p>도마아아앙의 여행스타일은 isfj네!</p>
-                        <p>그럼 인도 은/는 어때?</p>
-                    </ContentText>
-                </ContentDiv>
+                </Container>
+            ))}
 
-            </Container>
         </>
     )
 }

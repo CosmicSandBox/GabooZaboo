@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import Image from "next/image";
@@ -6,95 +6,146 @@ import {FaCheck} from "react-icons/fa6";
 
 import TestBoo from "@/img/question.png"
 import TestMemo from "@/img/testmemo.png";
+import {getCollectionAll, updateArray} from "../../firebase/fbase";
 
 function TestJP () {
+    const [qnaData, setQnaDate] = useState([]);
+    const [answerJ, setAnswerJ] = useState([]);
+    const [answerP, setAnswerP] = useState([]);
+    const [user_mbti, setUser_mbti] = useState([]);
+
+
+    const getQnA = async () => {
+        const QnAData = await getCollectionAll("question");
+        setQnaDate(QnAData);
+        // console.log("qnaData",qnaData)
+    };
+
+    const get_userMbti = async () => {
+        const res = await getCollectionAll("user");
+        setUser_mbti(res);
+        // console.log("user_mbti",user_mbti)
+    };
+
+    const handle_JnP_value = (value) => {
+        if (value === "J") {
+            setAnswerJ((prevAnswer1) => [...prevAnswer1, value]);
+        } else if (value === "P") {
+            setAnswerP((prevAnswer2) => [...prevAnswer2, value]);
+        } else {
+            console.error("Invalid button value");
+        }
+    };
+
+    const submitJnP= (e) => {
+        e.preventDefault();
+        const mbtiValue = answerJ.length > answerP.length ? 'J' : 'P';
+        // console.log("user_mbti", mbtiValue);
+        updateArray("user","user","mbti",mbtiValue)
+        get_userMbti();
+    };
+
+    useEffect(() => {
+        getQnA();
+        get_userMbti();
+    }, []);
+
     return (
         <>
-            <Container>
-                {/*01.네이비색 백그라운드 div*/}
-                <TestDiv>
-                    {/*01-1.문제랑 선택지 div*/}
-                    <QuestionDiv>
-                        {/*01-1-1.문제*/}
-                        <Question>
-                            <Image src={TestMemo} className={'Question-image'}/>
-                            <p className={'Question-text'}>test text</p>
-                        </Question>
-                        {/*01-1-2.선택지*/}
-                        <AnswerBtnDiv>
-                            <Btn>
-                                <button
-                                    type={'button'}
-                                    className={'BtnSize'}
-                                    // onClick={handleBtn}
-                                />
-                                <p className={'answerText'}>질문입니다.</p>
-                            </Btn>
-                            <Btn>
-                                <button
-                                    type={'button'}
-                                    className={'BtnSize'}
-                                />
-                                <p className={'answerText'}>질문입니다.</p>
-                            </Btn>
-                        </AnswerBtnDiv>
-                    </QuestionDiv>
-                    {/*01-2.문제랑 선택지 div*/}
-                    <QuestionDiv>
-                        {/*01-2-01.문제지*/}
-                        <Question>
-                            <p>질문입니다</p>
-                            <Image src={TestMemo} />
-                        </Question>
-                        {/*01-2-02.선택지*/}
-                        <AnswerBtnDiv>
-                            <Btn>
-                                <button
-                                    type={'button'}
-                                    className={'BtnSize'}/>
-                                <p className={'answerText'}>질문입니다.</p>
-                            </Btn>
-                            <Btn>
-                                <button
-                                    type={'button'}
-                                    className={'BtnSize'}/>
-                                <p className={'answerText'}>질문입니다.</p>
-                            </Btn>
-                        </AnswerBtnDiv>
-                    </QuestionDiv>
-                    {/*01-3.문제랑 선택지 div*/}
-                    <QuestionDiv>
-                        {/*01-3-1.문제지*/}
-                        <Question>
-                            <p>질문입니다</p>
-                            <Image src={TestMemo} />
-                        </Question>
-                        {/*01-3-2.선택지*/}
-                        <AnswerBtnDiv>
-                            <Btn>
-                                <button
-                                    type={'button'}
-                                    className={'BtnSize'}/>
-                                <p className={'answerText'}>질문입니다.</p>
-                            </Btn>
-                            <Btn>
-                                <button
-                                    type={'button'}
-                                    className={'BtnSize'}/>
-                                <p className={'answerText'}>질문입니다.</p>
-                            </Btn>
-                        </AnswerBtnDiv>
-                        {/*01-4. 다음 문제 이동 버튼*/}
-                        <NextButton type={'button'}>
-                            <Link href={'/result'}>
-                                <p>결과 보러 가기</p>
-                            </Link>
-                        </NextButton>
-                    </QuestionDiv>
-                </TestDiv>
-                {/*02.부 이미지*/}
-                <Image src={TestBoo} className={'booImg'}/>
-            </Container>
+            {qnaData.map((item, index)=>(
+                <Container key={index}>
+                    {/*01.네이비색 백그라운드 div*/}
+                    <TestDiv>
+                        {/*01-1.문제랑 선택지 div*/}
+                        <QuestionDiv>
+                            {/*01-1-1.문제*/}
+                            <Question>
+                                <Image src={TestMemo} className={'Question-image'}/>
+                                <p className={'Question-text'}>{item.id_10.q}</p>
+                            </Question>
+                            {/*01-1-2.선택지*/}
+                            <AnswerBtnDiv>
+                                <Btn>
+                                    <button
+                                        type={'button'}
+                                        className={'BtnSize'}
+                                        onClick={() => handle_JnP_value("J")}
+                                        // onClick={handleBtn}
+                                    />
+                                    <p className={'answerText'}>{item.id_10.a1}</p>
+                                </Btn>
+                                <Btn>
+                                    <button
+                                        type={'button'}
+                                        className={'BtnSize'}
+                                        onClick={() => handle_JnP_value("P")}
+                                    />
+                                    <p className={'answerText'}>{item.id_10.a2}</p>
+                                </Btn>
+                            </AnswerBtnDiv>
+                        </QuestionDiv>
+                        {/*01-2.문제랑 선택지 div*/}
+                        <QuestionDiv>
+                            {/*01-2-01.문제지*/}
+                            <Question>
+                                <p>{item.id_11.q}</p>
+                                <Image src={TestMemo} />
+                            </Question>
+                            {/*01-2-02.선택지*/}
+                            <AnswerBtnDiv>
+                                <Btn>
+                                    <button
+                                        type={'button'}
+                                        className={'BtnSize'}
+                                        onClick={() => handle_JnP_value("J")}/>
+                                    <p className={'answerText'}>{item.id_11.a1}</p>
+                                </Btn>
+                                <Btn>
+                                    <button
+                                        type={'button'}
+                                        className={'BtnSize'}
+                                        onClick={() => handle_JnP_value("P")}/>
+                                    <p className={'answerText'}>{item.id_11.a2}</p>
+                                </Btn>
+                            </AnswerBtnDiv>
+                        </QuestionDiv>
+                        {/*01-3.문제랑 선택지 div*/}
+                        <QuestionDiv>
+                            {/*01-3-1.문제지*/}
+                            <Question>
+                                <p>{item.id_12.q}</p>
+                                <Image src={TestMemo} />
+                            </Question>
+                            {/*01-3-2.선택지*/}
+                            <AnswerBtnDiv>
+                                <Btn>
+                                    <button
+                                        type={'button'}
+                                        className={'BtnSize'}
+                                        onClick={() => handle_JnP_value("J")}/>
+                                    <p className={'answerText'}>{item.id_12.a1}</p>
+                                </Btn>
+                                <Btn>
+                                    <button
+                                        type={'button'}
+                                        className={'BtnSize'}
+                                        onClick={() => handle_JnP_value("P")}/>
+                                    <p className={'answerText'}>{item.id_12.a2}</p>
+                                </Btn>
+                            </AnswerBtnDiv>
+                            {/*01-4. 다음 문제 이동 버튼*/}
+                            <NextButton type={'button'} onClick={submitJnP}>
+                                <Link href={'/result'}>
+                                    <p>결과 보러 가기</p>
+                                </Link>
+                            </NextButton>
+                        </QuestionDiv>
+                    </TestDiv>
+                    {/*02.부 이미지*/}
+                    <Image src={TestBoo} className={'booImg'}/>
+                </Container>
+            ))}
+
         </>
     );
 }

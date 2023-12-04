@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
-function CtgLightBtn(){
+function CtgLightBtn({mbti}){
 
     return(
         <>
-            <LightBtn type={'button'}>
-                <p>tlqkf</p>
-            </LightBtn>
+            <Link href={'/result/anotherResult'}>
+                <LightBtn type={'button'}>
+                    <p>{mbti}</p>
+                </LightBtn>
+            </Link>
         </>
     )
 }
