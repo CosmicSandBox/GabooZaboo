@@ -77,7 +77,7 @@ function TestFT () {
                                         onClick={() => handle_FnT_value("F")}
                                         // onClick={handleBtn}
                                     />
-                                    <p className={'answerText'}>{item.id_7.a1}</p>
+                                    <p className={'answerText'}>{item.id_7.a1} (⸝⸝⸝ᵒ̴̶̷̥́ ᵕ ก̀⸝⸝⸝)ෆ</p>
                                 </Btn>
                                 <Btn>
                                     <button
@@ -85,7 +85,7 @@ function TestFT () {
                                         className={'BtnSize'}
                                         onClick={() => handle_FnT_value("T")}
                                     />
-                                    <p className={'answerText'}>{item.id_7.a2}</p>
+                                    <p className={'answerText'}>{item.id_7.a2}(；☉_☉) </p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -106,14 +106,14 @@ function TestFT () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_FnT_value("F")}/>
-                                    <p className={'answerText'}>{item.id_8.a1}</p>
+                                    <p className={'answerText'}>{item.id_8.a1} ｡°(°.◜ᯅ◝°)°｡</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_FnT_value("T")}/>
-                                    <p className={'answerText'}>{item.id_8.a2}</p>
+                                    <p className={'answerText'}>{item.id_8.a2}(◔_◔)</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -134,14 +134,14 @@ function TestFT () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_FnT_value("F")}/>
-                                    <p className={'answerText'}>{item.id_9.a1}</p>
+                                    <p className={'answerText'}>{item.id_9.a1}٩(இ ⌓ இ๑)۶</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_FnT_value("T")}/>
-                                    <p className={'answerText'}>{item.id_9.a2}</p>
+                                    <p className={'answerText'}>{item.id_9.a2}Σ٩(๑º ﾛ º๑)۶</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
