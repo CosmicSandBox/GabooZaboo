@@ -164,6 +164,8 @@ function TestSN () {
         </>
     );
 }
+
+export default TestSN;
 const Container=styled.div`
   display: flex;
   flex-direction: column;
@@ -337,4 +339,3 @@ const NextButton=styled.button`
   outline: none;
   
 `;
-export default TestSN;

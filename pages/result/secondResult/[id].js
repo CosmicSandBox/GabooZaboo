@@ -21,7 +21,7 @@ function SecondResult () {
                         <p>🔙 이전 내용 보기</p>
                     </ResultBtn>
                 </Link>
-                <Link href={'/loading'}>
+                <Link href={'/result/finalResult'}>
                     <ResultBtn className={'FinalResultBtn'}>
                         <p>📚 최종 결과 보기</p>
                     </ResultBtn>

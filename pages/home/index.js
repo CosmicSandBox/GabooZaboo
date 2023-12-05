@@ -67,6 +67,8 @@ function HomePage() {
         </>
     );
 }
+
+export default HomePage;
 const Container=styled.div`
   display: flex;
   flex-direction: column;
@@ -168,4 +170,3 @@ const HomeNextBtn=styled.div`
     }
   }
 `;
-export default HomePage;

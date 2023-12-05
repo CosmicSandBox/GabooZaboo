@@ -35,6 +35,8 @@ function IntroducePage () {
         </>
     );
 }
+
+export default IntroducePage;
 const Container=styled.div`
   display: flex;
   flex-direction: column;
@@ -102,5 +104,3 @@ const GotoBtn=styled.button`
     font-weight: 700;
   }
 `;
-
-export default IntroducePage;
