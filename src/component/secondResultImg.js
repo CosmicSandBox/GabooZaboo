@@ -26,19 +26,15 @@ function SecondResultImg({mbti :Mbti}){
         <>
             {data.map((item, index)=>(
                 <Container key={index}>
-                    <Image src={File} alt={'bg파일이미지'} className={'bgImg'}/>
+                    <Image src={File} alt={'bg파일이미지'} className={'bgImg'} />
                     <ContentDiv>
                         <ContentHeader>
-                            {/*원본코드-이거 사용하시면 됩니당*/}
-                            {/*<Image src={'flag_img'} alt={'flag_img'}/>*/}
-                            {/*<Image src={item.flag_img} alt={'flag_img'}/>*/}
-
-                            <Image src={Flag} alt={'flag_img'}/>
+                            <Image src={item.flag_img} alt={'flag_img'} width={40} height={30}/>
                             <p>{item.country}</p>
                         </ContentHeader>
                         <ContentText>
                             <p>{item.mbti_feature}에 맞는 곳을 찾아봤어 (●'◡'●)</p>
-                            <p>{item.country} 로/으로 가부자부~!</p>
+                            <p>{item.country}를 향해 가부자부~!</p>
                         </ContentText>
                     </ContentDiv>
                 </Container>

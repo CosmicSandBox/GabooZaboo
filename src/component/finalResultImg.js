@@ -37,7 +37,7 @@ function FinalResultImg({name,mbti: myMbti }){
                         {/*01.전통의상 부*/}
                         {/*01-1. 원본코드 -이거 사용하시면 됩니다!*/}
                         {/*<Image src={'boo_img'} alt={'boo_img전통의상'}/>*/}
-                        <Image src={Boo} alt={'boo_img전통의상'} className={'booImg'}/>
+                        <Image src={item.boo_img} alt={'boo_img전통의상'} width={60} height={100}/>
 
                         {/*02.티켓 주요 내용(흰바탕 위 모든 요소)*/}
                         <NationContent>
@@ -63,16 +63,27 @@ function FinalResultImg({name,mbti: myMbti }){
                             <Line />
                             <RecommendPlace>
                                 <p className={'recommendTitle'}>추천 여행지 :</p>
-                                {item.location_list.map((loc, index)=>(
-                                    <div key={index} className={'recommendContents'}>
-                                        <p>{loc}</p>
+                                <Link href={item.location1.link}>
+                                    <div className={'recommendContents'}>
+                                        <p>{item.location1.name}</p>
                                     </div>
-                                ))}
+                                </Link>
+                                <Link href={item.location2.link}>
+                                    <div className={'recommendContents'}>
+                                        <p>{item.location2.name}</p>
+                                    </div>
+                                </Link>
+                                <Link href={item.location3.link}>
+                                    <div className={'recommendContents'}>
+                                        <p>{item.location3.name}</p>
+                                    </div>
+                                </Link>
 
                             </RecommendPlace>
                             <ContentBottom>
                                 <BottomHeader>
-                                    <Image src={Flag} alt={'flag_img'}/>
+                                    <Image src={item.flag_img} alt={'flag_img'} width={70} height={40}/>
+
                                     <p>{item.country}</p>
                                 </BottomHeader>
                                 <Line />
