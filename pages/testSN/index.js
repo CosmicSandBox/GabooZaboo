@@ -78,7 +78,7 @@ function TestSN () {
                                         onClick={() => handle_SnN_value("S")}
                                         // onClick={handleBtn}
                                     />
-                                    <p className={'answerText'}>{item.id_4.a1}</p>
+                                    <p className={'answerText'}>{item.id_4.a1}( •⍸• )</p>
                                 </Btn>
                                 <Btn>
                                     <button
@@ -86,7 +86,7 @@ function TestSN () {
                                         className={'BtnSize'}
                                         onClick={() => handle_SnN_value("N")}
                                     />
-                                    <p className={'answerText'}>{item.id_4.a2}</p>
+                                    <p className={'answerText'}>{item.id_4.a2} ( ⸝⸝•ᴗ•⸝⸝ )੭⁾⁾ </p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -107,14 +107,14 @@ function TestSN () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_SnN_value("S")}/>
-                                    <p className={'answerText'}>{item.id_5.a1}</p>
+                                    <p className={'answerText'}>{item.id_5.a1}<br/>╰( ▪‿▪)╮</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_SnN_value("N")}/>
-                                    <p className={'answerText'}>{item.id_5.a2}</p>
+                                    <p className={'answerText'}>{item.id_5.a2}(ღ•͈ᴗ•͈ღ)♥</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -135,14 +135,14 @@ function TestSN () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_SnN_value("S")}/>
-                                    <p className={'answerText'}>{item.id_7.a1}</p>
+                                    <p className={'answerText'}>{item.id_6.a1} (｡・ω・｡)?</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_SnN_value("N")}/>
-                                    <p className={'answerText'}>{item.id_7.a2}</p>
+                                    <p className={'answerText'}>{item.id_6.a2}<br/>☆(･ω･*)ゞ</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>

@@ -78,7 +78,7 @@ function TestJP () {
                                         onClick={() => handle_JnP_value("J")}
                                         // onClick={handleBtn}
                                     />
-                                    <p className={'answerText'}>{item.id_10.a1}</p>
+                                    <p className={'answerText'}>{item.id_10.a1} १✌˚◡˚✌५</p>
                                 </Btn>
                                 <Btn>
                                     <button
@@ -86,7 +86,7 @@ function TestJP () {
                                         className={'BtnSize'}
                                         onClick={() => handle_JnP_value("P")}
                                     />
-                                    <p className={'answerText'}>{item.id_10.a2}</p>
+                                    <p className={'answerText'}>{item.id_10.a2}~(⁰▿⁰)~</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -107,14 +107,14 @@ function TestJP () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_JnP_value("J")}/>
-                                    <p className={'answerText'}>{item.id_11.a1}</p>
+                                    <p className={'answerText'}>{item.id_11.a1} ໒(⊙ᴗ⊙)७✎▤</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_JnP_value("P")}/>
-                                    <p className={'answerText'}>{item.id_11.a2}</p>
+                                    <p className={'answerText'}>{item.id_11.a2}  ₍₍ (ง ˘ω˘ )ว ⁾⁾</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -135,14 +135,14 @@ function TestJP () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_JnP_value("J")}/>
-                                    <p className={'answerText'}>{item.id_12.a1}</p>
+                                    <p className={'answerText'}>{item.id_12.a1} (ఠ_ఠ)</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_JnP_value("P")}/>
-                                    <p className={'answerText'}>{item.id_12.a2}</p>
+                                    <p className={'answerText'}>{item.id_12.a2}(⋆ˆ ³ ˆ)♥</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
