@@ -69,6 +69,9 @@ function FinalResult () {
     </>
     );
   }
+export default FinalResult;
+
+
 const Container=styled.div`
 
     .Departure{
@@ -133,5 +136,3 @@ const Btns=styled.button`
     font-weight: bold;
   }
 `;
-
-export default FinalResult;

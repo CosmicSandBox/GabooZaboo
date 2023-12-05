@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
@@ -8,36 +8,48 @@ import Image from "next/image";
 import Flag from "@/imgTest/flag_img.png"
 import Boo from "@/imgTest/boo_img.png"
 import GBZB from "@/img/GBJB.png";
+import {findMbti} from "../../firebase/fbase";
 
-function SecondResultImg(){
+function SecondResultImg({mbti :Mbti}){
 
+    const [data, setData] = useState([]);
+    const getData = async () => {
+        const res = await findMbti("other_results",Mbti);
+        setData(res);
+
+    };
+
+    useEffect(() => {
+        getData()
+    }, []);
     return(
         <>
-            <Container>
-                <Image src={File} alt={'bg파일이미지'} className={'bgImg'}/>
-                <ContentDiv>
-                    <ContentHeader>
-                        {/*원본코드-이거 사용하시면 됩니당*/}
-                        {/*<Image src={'flag_img'} alt={'flag_img'}/>*/}
+            {data.map((item, index)=>(
+                <Container key={index}>
+                    <Image src={File} alt={'bg파일이미지'} className={'bgImg'}/>
+                    <ContentDiv>
+                        <ContentHeader>
+                            {/*원본코드-이거 사용하시면 됩니당*/}
+                            {/*<Image src={'flag_img'} alt={'flag_img'}/>*/}
+                            {/*<Image src={item.flag_img} alt={'flag_img'}/>*/}
 
-                        {/*테스트 코드*/}
-                        <Image src={Flag} alt={'flag_img'}/>
-                        <p>인도</p>
-                    </ContentHeader>
-                    <ContentText>
-                        {/*원본 코드 - 이거 사용하시면 됩니다!*/}
-                        {/*<p>{mbti_feature}</p>*/}
-                        {/*<p>{country} 로/으로 가부자부~!</p>*/}
+                            <Image src={Flag} alt={'flag_img'}/>
+                            <p>{item.country}</p>
+                        </ContentHeader>
+                        <ContentText>
+                            <p>{item.mbti_feature}에 맞는 곳을 찾아봤어 (●'◡'●)</p>
+                            <p>{item.country} 로/으로 가부자부~!</p>
+                        </ContentText>
+                    </ContentDiv>
+                </Container>
+            ))}
 
-                        {/*테스트 코드*/}
-                        <p>설명</p>
-                        <p>인도 로/으로 가부자부~!</p>
-                    </ContentText>
-                </ContentDiv>
-            </Container>
         </>
     )
 }
+
+export default SecondResultImg
+
 const Container=styled.div`
   display: flex;
   flex-direction: column;
@@ -78,4 +90,3 @@ const ContentText=styled.div`
   justify-content: center;
   margin-top: 1rem;
 `;
-export default SecondResultImg

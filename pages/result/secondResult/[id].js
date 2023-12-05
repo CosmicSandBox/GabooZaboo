@@ -4,13 +4,17 @@ import styled from "@emotion/styled";
 import SecondResultImg from "@/component/secondResultImg";
 import Image from "next/image";
 import GBZB from "@/img/GBJB.png";
+import {useRouter} from "next/router";
 
 function SecondResult () {
+    const router = useRouter()
+    console.log("router",router)
+    const user_mbti = router.query.id
     return (
     <>
         <Container>
             <Image src={GBZB} alt={'페이지 헤더'} className={'Header'}/>
-            <SecondResultImg />
+            <SecondResultImg mbti={user_mbti}/>
             <Btns>
                 <Link href={'/result'}>
                     <ResultBtn>
@@ -27,6 +31,8 @@ function SecondResult () {
     </>
     );
   }
+export default SecondResult;
+
 const Container=styled.div`
   .Header{
     position: absolute;
@@ -69,4 +75,3 @@ const ResultBtn=styled.button`
   }
   
 `;
-export default SecondResult;
