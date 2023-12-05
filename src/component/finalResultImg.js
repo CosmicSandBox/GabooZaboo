@@ -17,10 +17,10 @@ function FinalResultImg({name,mbti: myMbti }){
 
     const [data, setData] = useState([]);
     const getData = async () => {
-        const res = await findMbti("mbti_feature","ENFP");
+        const res = await findMbti("mbti_feature",myMbti);
         setData(res);
-        console.log("@@@@@@@@data",data)
-        console.log("myMbti",myMbti)
+        // console.log("@@@@@@@@data",data)
+        // console.log("myMbti",myMbti)
     };
 
     useEffect(() => {
@@ -37,29 +37,18 @@ function FinalResultImg({name,mbti: myMbti }){
                         {/*01.전통의상 부*/}
                         {/*01-1. 원본코드 -이거 사용하시면 됩니다!*/}
                         {/*<Image src={'boo_img'} alt={'boo_img전통의상'}/>*/}
-
-                        {/*01-2.테스트용 코드*/}
                         <Image src={Boo} alt={'boo_img전통의상'} className={'booImg'}/>
 
                         {/*02.티켓 주요 내용(흰바탕 위 모든 요소)*/}
                         <NationContent>
                             <p className={'boardingPass'}>BOARDING PASS</p>
                             <DepartureHeader>
-                                <p>{item.mbti}</p>
-                                {/*<p>HUFS</p>*/}
+                                <p>HUFS</p>
                                 <IoAirplane />
-                                {/*02-1.원본코드 - 이거 사용하세용*/}
-                                {/*<p>{'airport'}</p>*/}
 
-                                {/*02-2.테스트용 코드*/}
-                                <p>DEL</p>
+                                <p>{item.airport}</p>
                             </DepartureHeader>
                             <DepartureUser>
-                                {/*02-1.원본코드 - 이거 사용하세용~*/}
-                                {/*<p>PASSENGER : {'user_name'}</p>*/}
-
-                                {/*02-2.테스트용 코드*/}
-                                {/*<p className={'passengerWrap'}>PASSENGER : 도마아아앙</p>*/}
                                 <div className={'passengerDiv'}>
                                     <p>PASSENGER : </p>
                                     <p>{name}</p>
@@ -73,13 +62,6 @@ function FinalResultImg({name,mbti: myMbti }){
                             </DepartureUser>
                             <Line />
                             <RecommendPlace>
-                                {/*02-1.원본코드 - 이거 사용하세요!!*/}
-                                {/*<p>추천 여행지 :</p>*/}
-                                {/*<p>{'location1'}</p>*/}
-                                {/*<p>{'location2'}</p>*/}
-                                {/*<p>{'location3'}</p>*/}
-
-                                {/*02-2.테스트용 코드*/}
                                 <p className={'recommendTitle'}>추천 여행지 :</p>
                                 {item.location_list.map((loc, index)=>(
                                     <div key={index} className={'recommendContents'}>
@@ -90,14 +72,8 @@ function FinalResultImg({name,mbti: myMbti }){
                             </RecommendPlace>
                             <ContentBottom>
                                 <BottomHeader>
-                                    {/*02-1.원본코드 - 이거 사용하세용*/}
-                                    {/*<Image src={'flag_img'} alt={'flag_img'}/>*/}
-                                    {/*<p>{'country'}</p>*/}
-
-                                    {/*02-2.테스트용 코드*/}
                                     <Image src={Flag} alt={'flag_img'}/>
-                                    {/*<p>INDIA</p>*/}
-                                    <p>INDONESIA</p>
+                                    <p>{item.country}</p>
                                 </BottomHeader>
                                 <Line />
                                 <Image src={Barcode} alt={'바코드'} className={'Barcode'}/>
@@ -111,6 +87,7 @@ function FinalResultImg({name,mbti: myMbti }){
                         </TimeStamp>
                     </ContentDiv>
                 </Container>
+
             ))}
         </>
     )
