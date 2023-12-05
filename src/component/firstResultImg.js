@@ -89,9 +89,12 @@ const ContentText=styled.div`
   
   align-items: center;
   text-align: center;
-  //justify-content: center;
+  justify-content: center;
+  
   margin-top: 1.5rem;
-  margin-left: 1.6rem;
+  //margin-left: 1.6rem;
+  margin-left: 2.5rem;
+  
   .textHeader{
     margin-bottom: 1rem;
   }
