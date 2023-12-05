@@ -8,14 +8,14 @@ import { useRouter } from "next/router";
 import loadingBoo from "@/img/loadingBoo.png";
 import GBZB from "@/img/GBJB.png";
 
-function Loading(){
+function LoadingComponent(){
 
     const router=useRouter();
 
     useEffect(() => {
         //2초 뒤에 다음 페이지 이동
         const timeout=setTimeout(()=>{
-            router.push('/result');
+            router.push('/result/finalResult');
         },1000);
 
         return ()=>clearTimeout(timeout);
@@ -26,7 +26,7 @@ function Loading(){
             <Container>
                 <Image src={GBZB} alt={'페이지 헤더'} className={'Header'}/>
                 <Image src={loadingBoo} alt={'로딩부 이미지'} className={'loadingBoo'}/>
-                <Link href={"/result"} className={'loadingText'}>
+                <Link href={"/result/finalResult"} className={'loadingText'}>
                     <p>로딩중</p>
                 </Link>
             </Container>
@@ -34,7 +34,7 @@ function Loading(){
     )
 }
 
-export default Loading;
+export default LoadingComponent;
 const Container=styled.div`
   display: flex;
   flex-direction: column;

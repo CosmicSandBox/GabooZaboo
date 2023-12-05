@@ -162,7 +162,7 @@ function TestEI () {
         </>
     );
 }
-
+export default TestEI;
 //전체 div
 const Container=styled.div`
   display: flex;
@@ -347,4 +347,3 @@ const NextButton=styled.button`
   font-weight:bold;
   
 `;
-export default TestEI;

@@ -58,6 +58,8 @@ function CategoryPage () {
     </>
     );
   }
+
+export default CategoryPage;
 const Container=styled.div`
   .Header{
     position: absolute;
@@ -85,4 +87,3 @@ const ReturnFinalBtn=styled.button`
   border: none;
   outline: none;
 `;
-export default CategoryPage;

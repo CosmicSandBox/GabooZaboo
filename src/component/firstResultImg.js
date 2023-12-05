@@ -34,7 +34,7 @@ function FirstResultImg({name, mbti:Mbti}){
                         </ContentHeader>
                         <ContentText>
 
-                            <p>{item.say_hello}</p>
+                            <p className={'textHeader'}>{item.say_hello}</p>
                             {/*<p>{user_name} 의 여행스타일은 {user_mbti}네!</p>*/}
                             {/*<p>그럼 {country} 은/는 어때?</p>*/}
 
@@ -89,7 +89,11 @@ const ContentText=styled.div`
   
   align-items: center;
   text-align: center;
-  justify-content: center;
+  //justify-content: center;
   margin-top: 1.5rem;
+  margin-left: 1.6rem;
+  .textHeader{
+    margin-bottom: 1rem;
+  }
   
 `;

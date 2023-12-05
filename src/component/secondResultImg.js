@@ -65,8 +65,8 @@ const ContentDiv=styled.div`
   z-index: 1;
 
   position: absolute;
-  top: 20.5rem;
-  left: 3.56rem;
+  top: 20rem;
+  left: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -88,5 +88,8 @@ const ContentText=styled.div`
   align-items: center;
   text-align: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 0.15rem;
+  
+  width: 18rem;
 `;

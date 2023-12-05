@@ -161,6 +161,8 @@ function TestFT () {
         </>
     );
 }
+
+export default TestFT;
 //전체 div
 const Container=styled.div`
   display: flex;
@@ -334,6 +336,4 @@ const NextButton=styled.button`
 
   border: none;
   outline: none;
-
 `;
-export default TestFT;

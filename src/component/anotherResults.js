@@ -97,6 +97,8 @@ function AnotherResultImg({name,mbti: Mbti }){
         </>
     )
 }
+
+export default AnotherResultImg;
 const Container=styled.div`
   display: flex;
   flex-direction: row;
@@ -267,4 +269,3 @@ const Line=styled.div`
   background-color: #2F5B79;
   margin: 1rem 0;
 `;
-export default AnotherResultImg
