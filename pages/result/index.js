@@ -6,14 +6,15 @@ import styled from "@emotion/styled";
 import GBJB from "@/img/GBJB.png";
 import Image from "next/image";
 import {getCollectionAll} from "../../firebase/fbase";
+import {useRouter} from "next/router";
 
 function Result () {
+
     const [users, setUsers] = useState([]);
     // export const getDocument = async (collectionName, documentId) => {
     const getUsers = async () => {
         const data = await getCollectionAll("user");
         setUsers(data);
-        console.log("users",users)
     };
     useEffect(() => {
         getUsers();
@@ -25,7 +26,7 @@ function Result () {
                 <Image src={GBJB} alt={"GBJB헤더"} className={"Header"}/>
                 <FirstResultImg name={item.name} mbti={item.mbti.map((value) => value.toString()).join("")}/>
                 {/*<Test />*/}
-                <Link href={'/result/secondResult'}>
+                <Link href={`/result/secondResult/${item.mbti.map((value) => value.toString()).join("")}`}>
                     <FirstResultBtn>
                         <p>다음</p>
                     </FirstResultBtn>
@@ -36,6 +37,10 @@ function Result () {
     </>
     );
   }
+
+  export default Result;
+
+
 const Container=styled.div`
   display: flex;
   flex-direction: column;
@@ -72,5 +77,3 @@ const FirstResultBtn=styled.button`
     background-color: #0095B5;
   }
 `;
-
-  export default Result;

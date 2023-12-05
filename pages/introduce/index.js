@@ -26,7 +26,7 @@ function IntroducePage () {
                 {/*        type={'button'}*/}
                 {/*    >🛫 테스트하러 가부자부!!</GotoBtn>*/}
                 {/*</Link>*/}
-                <Link href={'/testTest'}>
+                <Link href={'/testEI'}>
                     <GotoBtn
                         type={'button'}
                     >🛫 테스트하러 가부자부!!</GotoBtn>
@@ -35,6 +35,8 @@ function IntroducePage () {
         </>
     );
 }
+
+export default IntroducePage;
 const Container=styled.div`
   display: flex;
   flex-direction: column;
@@ -102,5 +104,3 @@ const GotoBtn=styled.button`
     font-weight: 700;
   }
 `;
-
-export default IntroducePage;

@@ -13,6 +13,8 @@ function CategoryBtns(){
         </>
     )
 }
+
+export default CategoryBtns;
 const Container=styled.div``;
 const LightBtn=styled.button`
   width: 8.5625rem;
@@ -48,4 +50,3 @@ const DarkBtn=styled.button`
   font-weight: 400;
   line-height: normal;
 `;
-export default CategoryBtns;

@@ -25,11 +25,14 @@ body {
 
   /*max-height: 100vh;*/
 
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   color: #2F5B79;
   background-color:#F0F0F0;
 
-
+  overflow: scroll;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
 
 body {

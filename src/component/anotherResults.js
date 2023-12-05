@@ -13,14 +13,14 @@ import Flag from "@/imgTest/flag_img.png";
 import Boo from "@/imgTest/boo_img.png";
 import {findMbti, getCollectionAll, getDocument} from "../../firebase/fbase";
 
-function FinalResultImg({name,mbti: myMbti }){
+function AnotherResultImg({name,mbti: Mbti }){
 
     const [data, setData] = useState([]);
     const getData = async () => {
-        const res = await findMbti("mbti_feature",myMbti);
+        const res = await findMbti("mbti_feature",Mbti);
         setData(res);
-        // console.log("@@@@@@@@data",data)
-        // console.log("myMbti",myMbti)
+        console.log("@@@@@@@@data",data)
+        console.log("myMbti",Mbti)
     };
 
     useEffect(() => {
@@ -37,15 +37,14 @@ function FinalResultImg({name,mbti: myMbti }){
                         {/*01.전통의상 부*/}
                         {/*01-1. 원본코드 -이거 사용하시면 됩니다!*/}
                         {/*<Image src={'boo_img'} alt={'boo_img전통의상'}/>*/}
+
                         <Image src={Boo} alt={'boo_img전통의상'} className={'booImg'}/>
 
-                        {/*02.티켓 주요 내용(흰바탕 위 모든 요소)*/}
                         <NationContent>
                             <p className={'boardingPass'}>BOARDING PASS</p>
                             <DepartureHeader>
                                 <p>HUFS</p>
                                 <IoAirplane />
-
                                 <p>{item.airport}</p>
                             </DepartureHeader>
                             <DepartureUser>
@@ -62,16 +61,23 @@ function FinalResultImg({name,mbti: myMbti }){
                             </DepartureUser>
                             <Line />
                             <RecommendPlace>
+                                {/*02-1.원본코드 - 이거 사용하세요!!*/}
+                                {/*<p>추천 여행지 :</p>*/}
+                                {/*<p>{'location1'}</p>*/}
+                                {/*<p>{'location2'}</p>*/}
+                                {/*<p>{'location3'}</p>*/}
+
+                                {/*02-2.테스트용 코드*/}
                                 <p className={'recommendTitle'}>추천 여행지 :</p>
                                 {item.location_list.map((loc, index)=>(
                                     <div key={index} className={'recommendContents'}>
                                         <p>{loc}</p>
                                     </div>
                                 ))}
-
                             </RecommendPlace>
                             <ContentBottom>
                                 <BottomHeader>
+                                    {/*02-1.원본코드 - 이거 사용하세용*/}
                                     <Image src={Flag} alt={'flag_img'}/>
                                     <p>{item.country}</p>
                                 </BottomHeader>
@@ -87,14 +93,12 @@ function FinalResultImg({name,mbti: myMbti }){
                         </TimeStamp>
                     </ContentDiv>
                 </Container>
-
             ))}
         </>
     )
 }
 
-export default FinalResultImg;
-
+export default AnotherResultImg;
 const Container=styled.div`
   display: flex;
   flex-direction: row;

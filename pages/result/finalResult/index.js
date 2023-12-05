@@ -11,8 +11,9 @@ import { LuShare2 } from "react-icons/lu";
 import { getCollectionAll, ResetField } from "../../../firebase/fbase";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
 
+// export const deleteField = async (collectionName,documentId,fieldName)=>{
+
 function FinalResult() {
-    // export const deleteField = async (collectionName,documentId,fieldName)=>{
     const [users, setUsers] = useState([]);
     const containerRef = useRef(null);
     const getUsers = async () => {
@@ -49,7 +50,15 @@ function FinalResult() {
     return (
         <>
             <Container ref={containerRef}>
-                <FinalResultImg />
+                {users.map((item, index) => (
+                    <FinalResultImg
+                        name={item.name}
+                        mbti={item.mbti
+                            .map((value) => value.toString())
+                            .join("")}
+                    />
+                ))}
+                {/*출국하기 스카이스캐너*/}
                 <button type={"button"} className={"Departure"}>
                     🛫 출국하기
                 </button>

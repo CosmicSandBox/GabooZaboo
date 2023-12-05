@@ -6,7 +6,7 @@ function CtgLightBtn({mbti}){
 
     return(
         <>
-            <Link href={'/result/anotherResult'}>
+            <Link href={`/result/anotherResult/${mbti}`}>
                 <LightBtn type={'button'}>
                     <p>{mbti}</p>
                 </LightBtn>
@@ -15,6 +15,8 @@ function CtgLightBtn({mbti}){
     )
 }
 
+
+export default CtgLightBtn;
 const LightBtn=styled.button`
   width: 8.5625rem;
   height: 3.75rem;
@@ -32,5 +34,4 @@ const LightBtn=styled.button`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-`
-export default CtgLightBtn;
+`;

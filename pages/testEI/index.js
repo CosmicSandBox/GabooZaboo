@@ -7,6 +7,7 @@ import {FaCheck} from "react-icons/fa6";
 import TestBoo from "@/img/question.png"
 import TestMemo from "@/img/testmemo.png";
 import {getCollectionAll, updateArray} from "../../firebase/fbase";
+import GBJB from "@/img/GBJB.png";
 
 function TestEI () {
     const [qnaData, setQnaDate] = useState([]);
@@ -55,6 +56,7 @@ function TestEI () {
         <>
             {qnaData.map((item, index)=>(
                 <Container key={index}>
+                    <Image src={GBJB} className={"Header"}/>
                     <div>
                         {/*01-1.문제랑 선택지 div*/}
                         <QuestionDiv>
@@ -75,7 +77,7 @@ function TestEI () {
                                         onClick={() => handle_EnI_value("E")}
                                         // onClick={handleBtn}
                                     />
-                                    <p className={'answerText'}>{item.id_1.a1}</p>
+                                    <p className={'answerText'}>{item.id_1.a1} ◝(・▿・)◜</p>
                                 </Btn>
                                 <Btn>
                                     <button
@@ -83,7 +85,7 @@ function TestEI () {
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("I")}
                                     />
-                                    <p className={'answerText'}>{item.id_1.a2}</p>
+                                    <p className={'answerText'}>{item.id_1.a2} ⸜( '⌓' )⸝</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -104,14 +106,14 @@ function TestEI () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("E")}/>
-                                    <p className={'answerText'}>{item.id_2.a1}</p>
+                                    <p className={'answerText'}>{item.id_2.a1}<br/> ₍₍◝(°꒳°*)◜₎₎</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("I")}/>
-                                    <p className={'answerText'}>{item.id_2.a2}</p>
+                                    <p className={'answerText'}>{item.id_2.a2} ₍₍◞( •௰• )◟₎₎</p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -132,14 +134,14 @@ function TestEI () {
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("E")}/>
-                                    <p className={'answerText'}>{item.id_3.a1}</p>
+                                    <p className={'answerText'}>{item.id_3.a1}(งᐛ)ว (งᐖ )ว</p>
                                 </Btn>
                                 <Btn>
                                     <button
                                         type={'button'}
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("I")}/>
-                                    <p className={'answerText'}>{item.id_3.a2}</p>
+                                    <p className={'answerText'}>{item.id_3.a2}  (((( ;°Д°)))) </p>
                                 </Btn>
                             </AnswerBtnDiv>
                         </QuestionDiv>
@@ -160,7 +162,7 @@ function TestEI () {
         </>
     );
 }
-
+export default TestEI;
 //전체 div
 const Container=styled.div`
   display: flex;
@@ -174,6 +176,14 @@ const Container=styled.div`
   //하단의 부 위치 css
   .booImg{
     margin-top: 1rem;
+  }
+
+  .Header{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    z-index: 1;
   }
 `;
 //질문 메모지랑 버튼 2개 div
@@ -219,44 +229,45 @@ const Question=styled.div`
     margin-top: 6.3rem;
     margin-left: 5.5rem;
 
-    color: red;
+    color: #2F5B79;
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
   //메모지 이미지
-  .Question-image{
-    width: 18.0625rem;
-    height: 18.75rem;
-    flex-shrink: 0;
-
-    z-index: 0;
-
-    position: absolute;
-    //margin: 1.25rem;
-    margin-left: 2.5rem;
-    margin-top: 0.5rem;
-  }
+  //.Question-image{
+  //  width: 18.0625rem;
+  //  height: 18.75rem;
+  //  flex-shrink: 0;
+  //
+  //  z-index: 0;
+  //
+  //  position: absolute;
+  //  //margin: 1.25rem;
+  //  margin-left: 2.5rem;
+  //  margin-top: 0.5rem;
+  //}
 `;
 const QuestionImg=styled.image`
-  width: 18.0625rem;
-  height: 18.75rem;
+  //width: 18.0625rem;
+  //height: 18.75rem;
+  margin-left: 2.7rem;
+  margin-top: 0.5rem;
+  
   flex-shrink: 0;
 
   z-index: 0;
 
   position: absolute;
   //margin: 1.25rem;
-  margin-left: 2.5rem;
-  margin-top: 0.5rem;
 `
 
 //버튼 2개 div
 const AnswerBtnDiv=styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 1.6rem;
 `;
 
 //버튼 요소 div
@@ -274,15 +285,21 @@ const Btn=styled.div`
   margin: 0.5rem;
 
   border-radius: 1.25rem;
-  border-color: #0095B5;
+  border-color: #f0f0f0;
   border-style: solid;
-  background: #FFF;
+  //background: #FFF;
+  //background-color: #F0F0F0;
 
+  &:hover{
+    border-color: #0095B5;
+  }
+  
   p{
     margin: auto 0.5rem;
     flex-wrap: wrap;
 
     font-size: 0.8375rem;
+    
   }
   .BtnSize{
     width: 2.625rem;
@@ -295,6 +312,7 @@ const Btn=styled.div`
 
     border-radius: 50%;
 
+    
     &:active{
       background-color: #0095B5;
     }
@@ -317,17 +335,15 @@ const NextButton=styled.button`
   margin-top: 0.5rem;
 
   border-radius: 3.125rem;
-  background-color: white;
-  color: #2F5B79;
-  font-weight: bold;
+  //background-color: white;
+  //color: #2F5B79;
+  //font-weight: bold;
 
   border: none;
   outline: none;
 
-  &:hover{
-    background: #0095B5;
-    color: white;
-    font-weight:bold;
-  }
+  background: #0095B5;
+  color: white;
+  font-weight:bold;
+  
 `;
-export default TestEI;
