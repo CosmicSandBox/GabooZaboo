@@ -10,6 +10,7 @@ import { RiMenuAddLine } from "react-icons/ri";
 import { LuShare2 } from "react-icons/lu";
 import { getCollectionAll, ResetField } from "../../../firebase/fbase";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
+import FinalResultBtn from "@/component/finalResultBtn";
 
 // export const deleteField = async (collectionName,documentId,fieldName)=>{
 
@@ -59,9 +60,7 @@ function FinalResult() {
                     />
                 ))}
                 {/*출국하기 스카이스캐너*/}
-                <button type={"button"} className={"Departure"}>
-                    🛫 출국하기
-                </button>
+                <FinalResultBtn />
                 <ResultBtns>
                     <Btns type={"button"} onClick={reset}>
                         <Link href={"/"}>
@@ -94,25 +93,7 @@ function FinalResult() {
     );
 }
 const Container = styled.div`
-    .Departure {
-        width: 9.5625rem;
-        height: 2.3125rem;
-        flex-shrink: 0;
-
-        margin-top: 1.25rem;
-        border-radius: 1.25rem;
-        background: #b5d5e9;
-
-        border: none;
-        outline: none;
-
-        color: #2f5b79;
-        font-weight: 500;
-
-        &:hover {
-            font-weight: bold;
-        }
-    }
+    
 `;
 const ResultBtns = styled.div`
     position: absolute;
