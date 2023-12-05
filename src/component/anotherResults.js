@@ -37,9 +37,7 @@ function AnotherResultImg({name,mbti: Mbti }){
                         {/*01.전통의상 부*/}
                         {/*01-1. 원본코드 -이거 사용하시면 됩니다!*/}
                         {/*<Image src={'boo_img'} alt={'boo_img전통의상'}/>*/}
-
                         <Image src={Boo} alt={'boo_img전통의상'} className={'booImg'}/>
-
                         <NationContent>
                             <p className={'boardingPass'}>BOARDING PASS</p>
                             <DepartureHeader>
@@ -74,6 +72,14 @@ function AnotherResultImg({name,mbti: Mbti }){
                                         <p>{loc}</p>
                                     </div>
                                 ))}
+
+                                {/*리뷰 링크입니댜...!*/}
+                                {item.location_link.map((loc, index)=>(
+                                    <Link key={index} href={loc}>
+                                        <button>리뷰링크</button>
+                                    </Link>
+                                ))}
+
                             </RecommendPlace>
                             <ContentBottom>
                                 <BottomHeader>

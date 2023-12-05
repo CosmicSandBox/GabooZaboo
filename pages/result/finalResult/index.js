@@ -52,15 +52,20 @@ function FinalResult() {
         <>
             <Container ref={containerRef}>
                 {users.map((item, index) => (
-                    <FinalResultImg
-                        name={item.name}
-                        mbti={item.mbti
-                            .map((value) => value.toString())
-                            .join("")}
-                    />
+                    <>
+                        <FinalResultImg
+                            name={item.name}
+                            mbti={item.mbti
+                                .map((value) => value.toString())
+                                .join("")}
+                        />
+                        <FinalResultBtn mbti={item.mbti.map((value) => value.toString()).join("")}/>
+                    </>
+
+
+
                 ))}
-                {/*출국하기 스카이스캐너*/}
-                <FinalResultBtn />
+
                 <ResultBtns>
                     <Btns type={"button"} onClick={reset}>
                         <Link href={"/"}>
