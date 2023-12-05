@@ -28,18 +28,15 @@ function FirstResultImg({name, mbti:Mbti}){
                     <Image src={File} className={'bgImg'} alt={'Bg파일이미지'}/>
                     <ContentDiv>
                         <ContentHeader>
-                            {/*<Image src={item.flag_img} alt={'flag_img'}/>*/}
+                            <Image src={item.flag_img} alt={'flag_img'} width={30} height={20}/>
                             {/*<Image src={"https://postfiles.pstatic.net/MjAyMzExMTlfODkg/MDAxNzAwMzkzMzYwMDg5.BKkfKDzqS8VzZfAj8iZdOG2WsgLurYfjC4d-b6jMI6Ig.TURU_PqbccS-fGHMH0aJ3Gkgu3jjkmw24SFuXOdiEZgg.PNG.esder1310/INTP_그리스.png?type=w773"} alt={'flag_img'}/>*/}
                             <p>{item.country}</p>
                         </ContentHeader>
                         <ContentText>
 
                             <p className={'textHeader'}>{item.say_hello}</p>
-                            {/*<p>{user_name} 의 여행스타일은 {user_mbti}네!</p>*/}
-                            {/*<p>그럼 {country} 은/는 어때?</p>*/}
-
                             <p>{name} 여행스타일은 {Mbti}네!</p>
-                            <p>그럼 {item.country} 은/는 어때?</p>
+                            <p>그럼 {item.country} 어때?</p>
                         </ContentText>
                     </ContentDiv>
 

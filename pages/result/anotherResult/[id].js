@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styled from "@emotion/styled";
 import FinalResultImg from "@/component/finalResultImg";
 import Link from "next/link";
@@ -9,19 +9,33 @@ import { LuShare2 } from "react-icons/lu";
 import AnotherResultImg from "@/component/anotherResults";
 import { useRouter } from "next/router";
 import FinalResultBtn from "@/component/finalResultBtn";
+import {getCollectionAll, ResetField} from "../../../firebase/fbase";
 
 function anotherResult() {
     const router = useRouter();
     const category_mbti = router.query.id;
-    console.log("category_mbti", category_mbti);
+    const [users, setUsers] = useState([]);
+    const containerRef = useRef(null);
+    const getUsers = async () => {
+        const data = await getCollectionAll("user");
+        setUsers(data);
+    };
+    useEffect(() => {
+        getUsers();
+    }, []);
+
+    const reset = () => {
+        ResetField("user", "user");
+        getUsers();
+    };
 
     return (
         <>
             <Container>
                 <AnotherResultImg name={"BOO"} mbti={category_mbti} />
-                <FinalResultBtn mbti={category_mbti} />
+                <FinalResultBtn mbti={category_mbti}/>
                 <ResultBtns>
-                    <Btns type={"button"}>
+                    <Btns type={"button"} onClick={reset}>
                         <Link href={"/"}>
                             <GrPowerReset />
                             <p>다시하기</p>
@@ -63,7 +77,7 @@ const Container = styled.div`
     }
 `;
 const ResultBtns = styled.div`
-    position: absolute;
+
     left: 2rem;
     bottom: 1.5rem;
 
@@ -71,7 +85,6 @@ const ResultBtns = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     outline: none;
     border: none;
 `;

@@ -36,8 +36,8 @@ function AnotherResultImg({name,mbti: Mbti }){
                     <ContentDiv>
                         {/*01.전통의상 부*/}
                         {/*01-1. 원본코드 -이거 사용하시면 됩니다!*/}
-                        {/*<Image src={'boo_img'} alt={'boo_img전통의상'}/>*/}
-                        <Image src={Boo} alt={'boo_img전통의상'} className={'booImg'}/>
+                        <Image src={item.boo_img} alt={'boo_img전통의상'} width={60} height={100}/>
+                        {/*<Image src={Boo} alt={'boo_img전통의상'} className={'booImg'}/>*/}
                         <NationContent>
                             <p className={'boardingPass'}>BOARDING PASS</p>
                             <DepartureHeader>
@@ -59,32 +59,36 @@ function AnotherResultImg({name,mbti: Mbti }){
                             </DepartureUser>
                             <Line />
                             <RecommendPlace>
-                                {/*02-1.원본코드 - 이거 사용하세요!!*/}
-                                {/*<p>추천 여행지 :</p>*/}
-                                {/*<p>{'location1'}</p>*/}
-                                {/*<p>{'location2'}</p>*/}
-                                {/*<p>{'location3'}</p>*/}
 
-                                {/*02-2.테스트용 코드*/}
                                 <p className={'recommendTitle'}>추천 여행지 :</p>
-                                {item.location_list.map((loc, index)=>(
-                                    <div key={index} className={'recommendContents'}>
-                                        <p>{loc}</p>
+                                <Link href={item.location1.link}>
+                                    <div className={'recommendContents'}>
+                                        <p>{item.location1.name}</p>
                                     </div>
-                                ))}
+                                </Link>
+                                <Link href={item.location2.link}>
+                                    <div className={'recommendContents'}>
+                                        <p>{item.location2.name}</p>
+                                    </div>
+                                </Link>
+                                <Link href={item.location3.link}>
+                                    <div className={'recommendContents'}>
+                                        <p>{item.location3.name}</p>
+                                    </div>
+                                </Link>
 
-                                {/*리뷰 링크입니댜...!*/}
-                                {item.location_link.map((loc, index)=>(
-                                    <Link key={index} href={loc}>
-                                        <button>리뷰링크</button>
-                                    </Link>
-                                ))}
-
+                                
+                                {/*<p className={'recommendTitle'}>추천 여행지 :</p>*/}
+                                {/*{item.location_list.map((loc, index)=>(*/}
+                                {/*    <div key={index} className={'recommendContents'}>*/}
+                                {/*        <p>{loc}</p>*/}
+                                {/*    </div>*/}
+                                {/*))}*/}
                             </RecommendPlace>
                             <ContentBottom>
                                 <BottomHeader>
-                                    {/*02-1.원본코드 - 이거 사용하세용*/}
-                                    <Image src={Flag} alt={'flag_img'}/>
+
+                                    <Image src={item.flag_img} alt={'flag_img'} width={70} height={40}/>
                                     <p>{item.country}</p>
                                 </BottomHeader>
                                 <Line />

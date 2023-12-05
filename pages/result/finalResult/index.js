@@ -57,8 +57,7 @@ function FinalResult() {
                             name={item.name}
                             mbti={item.mbti
                                 .map((value) => value.toString())
-                                .join("")}
-                        />
+                                .join("")}/>
                         <FinalResultBtn mbti={item.mbti.map((value) => value.toString()).join("")}/>
                     </>
 
