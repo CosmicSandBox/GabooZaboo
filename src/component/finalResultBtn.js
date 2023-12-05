@@ -2,15 +2,30 @@ import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import {findMbti} from "../../firebase/fbase";
 
-function FinalResultBtn(){
+function FinalResultBtn({mbti:Mbti}){
+    const [data, setData] = useState([]);
+    const getData = async () => {
+        const res = await findMbti("depart_link",Mbti);
+        setData(res);
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     return(
         <>
-            //출국하기 버튼
-            <DepartureBtn type={"button"}>
-                🛫 출국하기
-            </DepartureBtn>
+
+            {data.map((link)=>(
+                <Link  href={link.depart_link}>
+                    <DepartureBtn type={"button"}>
+                        🛫 출국하기
+                    </DepartureBtn>
+                </Link>
+            ))}
+
         </>
     )
 }

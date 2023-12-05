@@ -50,7 +50,9 @@ function ImgTest() {
             {/*    </div>*/}
             {/*))}*/}
 
-            <Image src={ENFJ} alt={"name"}/>
+            <img src={ENFJ} alt={"name"}/>
+            <img src={"/ENFP_라오스.png"} alt={"name"}/>
+
         </>
     );
 }

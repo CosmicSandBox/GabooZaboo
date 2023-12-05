@@ -8,6 +8,7 @@ import { RiMenuAddLine } from "react-icons/ri";
 import { LuShare2 } from "react-icons/lu";
 import AnotherResultImg from "@/component/anotherResults";
 import { useRouter } from "next/router";
+import FinalResultBtn from "@/component/finalResultBtn";
 
 function anotherResult() {
     const router = useRouter();
@@ -18,9 +19,7 @@ function anotherResult() {
         <>
             <Container>
                 <AnotherResultImg name={"BOO"} mbti={category_mbti} />
-                <button type={"button"} className={"Departure"}>
-                    🛫 출국하기
-                </button>
+                <FinalResultBtn mbti={category_mbti} />
                 <ResultBtns>
                     <Btns type={"button"}>
                         <Link href={"/"}>
@@ -28,23 +27,12 @@ function anotherResult() {
                             <p>다시하기</p>
                         </Link>
                     </Btns>
-                    {/*<Btns type={"button"}>*/}
-                    {/*    <HiDownload />*/}
-                    {/*    <p>저장</p>*/}
-                    {/*</Btns>*/}
                     <Btns type={"button"}>
                         <Link href={"/category"}>
                             <RiMenuAddLine />
                             <p>다른 결과 보러가기</p>
                         </Link>
                     </Btns>
-                    {/*<Link href={'/result/secondResult'}>*/}
-                    {/*    <button type={"button"}>뒤로가기</button>*/}
-                    {/*</Link>*/}
-                    {/*<Btns type={'button'}>*/}
-                    {/*    <LuShare2 />*/}
-                    {/*    <p>공유하기</p>*/}
-                    {/*</Btns>*/}
                 </ResultBtns>
             </Container>
         </>
