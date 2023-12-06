@@ -29,7 +29,7 @@ function SecondResultImg({mbti :Mbti}){
                     <Image src={File} alt={'bg파일이미지'} className={'bgImg'} />
                     <ContentDiv>
                         <ContentHeader>
-                            <Image src={item.flag_img} alt={'flag_img'} width={40} height={30}/>
+                            <Image src={item.flag_img} alt={'flag_img'} width={60} height={40}/>
                             <p>{item.country}</p>
                         </ContentHeader>
                         <ContentText>
