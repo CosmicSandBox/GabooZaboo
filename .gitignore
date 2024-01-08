@@ -37,4 +37,5 @@ next-env.d.ts
 
 .idea
 
-
+# yarn.lock 오류 해결하기 위해 추가함
+yarn.lock

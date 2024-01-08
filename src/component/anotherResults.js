@@ -8,9 +8,6 @@ import Barcode02 from "@/img/barcode02.png";
 import Ticket from '@/img/finalResultImg.png';
 import { IoAirplane } from "react-icons/io5";
 
-
-import Flag from "@/imgTest/flag_img.png";
-import Boo from "@/imgTest/boo_img.png";
 import {findMbti, getCollectionAll, getDocument} from "../../firebase/fbase";
 
 function AnotherResultImg({name,mbti: Mbti }){
@@ -88,7 +85,7 @@ function AnotherResultImg({name,mbti: Mbti }){
                             <ContentBottom>
                                 <BottomHeader>
 
-                                    <Image src={item.flag_img} alt={'flag_img'} width={70} height={40}/>
+                                    <Image src={item.flag_img} alt={'flag_img'} width={80} height={54}/>
                                     <p>{item.country}</p>
                                 </BottomHeader>
                                 <Line />
