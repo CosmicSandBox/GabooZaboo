@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from "react";
-import Link from "next/link";
 import styled from "@emotion/styled";
 
 import File from "@/img/file.png";
 import Image from "next/image";
 
-import Flag from "@/imgTest/flag_img.png"
-import Boo from "@/imgTest/boo_img.png"
-import GBZB from "@/img/GBJB.png";
 import {findMbti} from "../../firebase/fbase";
 
 function SecondResultImg({mbti :Mbti}){
@@ -29,7 +25,7 @@ function SecondResultImg({mbti :Mbti}){
                     <Image src={File} alt={'bg파일이미지'} className={'bgImg'} />
                     <ContentDiv>
                         <ContentHeader>
-                            <Image src={item.flag_img} alt={'flag_img'} width={40} height={30}/>
+                            <Image src={item.flag_img} alt={'flag_img'} width={60} height={40}/>
                             <p>{item.country}</p>
                         </ContentHeader>
                         <ContentText>
