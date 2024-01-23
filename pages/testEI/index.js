@@ -9,11 +9,17 @@ import TestMemo from "@/img/testmemo.png";
 import {getCollectionAll, updateArray} from "../../firebase/fbase";
 import GBJB from "@/img/GBJB.png";
 
+//btn check img
+
+
 function TestEI () {
     const [qnaData, setQnaDate] = useState([]);
     const [answerE, setAnswerE] = useState([]);
     const [answerI, setAnswerI] = useState([]);
     const [user_mbti, setUser_mbti] = useState([]);
+
+    //btn img state
+    const [isButtonImg,setIsButtonImg]=useState(false);
 
 
     const getQnA = async () => {
@@ -31,13 +37,18 @@ function TestEI () {
     const handle_EnI_value = (value) => {
         if (value === "E") {
             setAnswerE((prevAnswer1) => [...prevAnswer1, value]);
+            //버튼 이미지
+            setIsButtonImg(!isButtonImg);
         } else if (value === "I") {
             setAnswerI((prevAnswer2) => [...prevAnswer2, value]);
+            //버튼 이미지
+            setIsButtonImg(!isButtonImg);
         } else {
             console.error("Invalid button value");
         }
     };
 
+    // test E와 I중 결과값에 맞춰 전송하는 함수
     const submitEnI = (e) => {
         e.preventDefault();
         const mbtiValue = answerE.length > answerI.length ? 'E' : 'I';
@@ -76,6 +87,7 @@ function TestEI () {
                                         className={'BtnSize'}
                                         onClick={() => handle_EnI_value("E")}
                                         // onClick={handleBtn}
+
                                     />
                                     <p className={'answerText'}>{item.id_1.a1} ◝(・▿・)◜</p>
                                 </Btn>
@@ -290,18 +302,19 @@ const Btn=styled.div`
   //background: #FFF;
   //background-color: #F0F0F0;
 
-  &:hover{
+  &:hover {
     border-color: #0095B5;
   }
-  
-  p{
+
+  p {
     margin: auto 0.5rem;
     flex-wrap: wrap;
 
     font-size: 0.8375rem;
-    
+
   }
-  .BtnSize{
+
+  .BtnSize {
     width: 2.625rem;
     height: 2.625rem;
     flex-shrink: 0;
@@ -312,13 +325,14 @@ const Btn=styled.div`
 
     border-radius: 50%;
 
-    
-    &:active{
-      background-color: #0095B5;
+
+    &:active {
+      background-color: red;
+      //background-image: url('fa/FaCheck');
     }
   }
 
-  .answerText{
+  .answerText {
     //width: 15.4375rem;
     width: 14rem;
     height: 3.375rem;
