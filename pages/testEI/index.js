@@ -305,6 +305,7 @@ const Btn=styled.div`
   &:hover {
     border-color: #0095B5;
   }
+  
 
   p {
     margin: auto 0.5rem;
@@ -325,11 +326,10 @@ const Btn=styled.div`
 
     border-radius: 50%;
 
-
-    &:active {
-      background-color: red;
-      //background-image: url('fa/FaCheck');
+    &:active{
+      background-color: #0095B5;
     }
+    
   }
 
   .answerText {

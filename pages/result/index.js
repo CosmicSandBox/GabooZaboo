@@ -32,45 +32,54 @@ function Result() {
 
     return (
         <>
-            {users.map((item, index) => (
-                <Container key={index}>
-                    <Image src={GBJB} alt={"GBJB헤더"} className={"Header"} />
-                    <FirstResultImg
-                        name={item.name}
-                        mbti={item.mbti
-                            .map((value) => value.toString())
-                            .join("")}
-                    />
-                    {/*<Test />*/}
-                    <Link
-                        href={`/result/secondResult/${item.mbti
-                            .map((value) => value.toString())
-                            .join("")}`}
-                    >
-                        <FirstResultBtn>
-                            <p>다음</p>
-                        </FirstResultBtn>
-                    </Link>
-                </Container>
-            ))}
+            {/*정주 코드*/}
+            {/*{users.map((item, index) => (*/}
+            {/*    <Container key={index}>*/}
+            {/*        <Image src={GBJB} alt={"GBJB헤더"} className={"Header"} />*/}
+            {/*        <FirstResultImg*/}
+            {/*            name={item.name}*/}
+            {/*            mbti={item.mbti*/}
+            {/*                .map((value) => value.toString())*/}
+            {/*                .join("")}*/}
+            {/*        />*/}
+            {/*        /!*<Test />*!/*/}
+            {/*        <Link*/}
+            {/*            href={`/result/secondResult/${item.mbti*/}
+            {/*                .map((value) => value.toString())*/}
+            {/*                .join("")}`}*/}
+            {/*        >*/}
+            {/*            <FirstResultBtn>*/}
+            {/*                <p>다음</p>*/}
+            {/*            </FirstResultBtn>*/}
+            {/*        </Link>*/}
+            {/*    </Container>*/}
+            {/*))}*/}
+            <Container>
+
+            </Container>
         </>
     );
 }
 
 export default Result;
 
-const Container = styled.div`
-    display: flex;
+const Container =styled.div`
+    display:flex;
     flex-direction: column;
-
-    .Header {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-
-        z-index: 1;
-    }
 `;
+
+// const Container = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//
+//     .Header {
+//         position: absolute;
+//         right: 1rem;
+//         top: 1rem;
+//
+//         z-index: 1;
+//     }
+// `;
 const FirstResultBtn = styled.button`
     width: 18.75rem;
     height: 3.125rem;
