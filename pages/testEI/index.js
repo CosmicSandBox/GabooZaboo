@@ -327,7 +327,7 @@ const Btn=styled.div`
 
 
     &:active {
-      background-color: red;
+      background-color: #0095B5;
       //background-image: url('fa/FaCheck');
     }
   }
